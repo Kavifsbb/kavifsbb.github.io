@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kavi Freestyle</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .contact-page {
+            background: var(--white);
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contact-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--black);
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: var(--gray-300);
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .quick-contacts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .quick-contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-size: 1.1rem;
+        }
+
+        .quick-contact-item:hover {
+            color: var(--black);
+        }
+
+        .quick-contact-item i {
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            transition: var(--transition-smooth);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .contact-form {
+            background: var(--off-white);
+            padding: var(--spacing-lg);
+            border-radius: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--black);
+            transition: var(--transition-smooth);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--gray-200);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--black);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .form-button:hover {
+            background: var(--gray-900);
+            transform: translateY(-2px);
+        }
+
+        .form-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .form-button:hover i {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .quick-contacts {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="logo">KAVI</a>
+            <div class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="shows.html">Shows</a>
+                <a href="projets.html">Projets</a>
+                <a href="academie.html">Académie</a>
+                <a href="divers.html">Divers</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <div class="container">
+            <div class="contact-header" data-aos="fade-up">
+                <h1>Contactez-nous</h1>
+                <p>Une question ? Un projet ? N'hésitez pas à nous écrire !</p>
+            </div>
+            
+            <div class="contact-container" data-aos="fade-up">
+                <div class="quick-contacts">
+                    <a href="mailto:contact@kavifreestyle.com" class="quick-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        contact@kavifreestyle.com
+                    </a>
+                    <a href="tel:+33600000000" class="quick-contact-item">
+                        <i class="fas fa-phone"></i>
+                        +33 6 XX XX XX XX
+                    </a>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-up">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Sujet" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-textarea" placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-button">
+                        Envoyer le message
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">KAVI</a>
+                    <p>L'excellence du Freestyle Basket</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="shows.html">Shows</a></li>
+                            <li><a href="projets.html">Projets</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@kavi-freestyle.com">contact@kavi-freestyle.com</a></li>
+                            <li><a href="tel:+33600000000">+33 6 XX XX XX XX</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kavi Freestyle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
+    <script>
+        // Mobile navbar toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            menuBtn.classList.toggle('active');
+        });
+        
+        // Close nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuBtn.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

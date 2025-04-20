@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavi - Freestyle Basket Professionnel</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">KAVI</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="pages/projets.html">Les Projets</a></li>
+                <li><a href="pages/shows.html">Shows</a></li>
+                <li><a href="pages/academie.html">Académie</a></li>
+                <li><a href="pages/divers.html">Divers</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/kavi.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1 class="hero-title">Kavi Freestyle Basket</h1>
+            <p class="hero-subtitle">"Reste droit et le monde sera avec toi"</p>
+            <a href="#about" class="btn btn-primary">Découvrir</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFza2V0YmFsbCUyMHRyaWNrc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="À propos de Kavi">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h2>À propos</h2>
+                    <p>Passionné de freestyle basket depuis plus de 10 ans, je partage mon art à travers des shows, des Académie Vagabonds et des événements uniques.</p>
+                    <a href="pages/shows.html" style="margin-top: 1rem;" class="btn btn-primary">Voir les shows</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-text">Années d'expérience</span>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-text">Shows réalisés</span>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-text">Partenaires satisfaits</span>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="stat-number">100k+</span>
+                    <span class="stat-text">Followers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Mes Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1519684093736-61f49e250672?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhc2tldGJhbGwlMjBwZXJmb3JmYW5jZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Shows">
+                    <h3>Shows</h3>
+                    <p>Des performances uniques pour vos événements</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="data:image/jpeg;base64,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" alt="Académie Vagabond">
+                    <h3>Académie Vagabond</h3>
+                    <p>Apprenez le freestyle basket avec des experts</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://event2be.fr/wp-content/uploads/2021/04/artiste-performer-basket-freestyle-evenement-entreprise-prive.jpg" alt="Workshop">
+                    <h3>Workshop</h3>
+                    <p>Des sessions intensives pour progresser</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Placements de Produits</h3>
+                    <p>Collaborations et partenariats sur mesure</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Partners -->
+    <section class="section team-partners" id="partners">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Équipe & Partenaires</h2>
+            <div class="partners-grid" data-aos="fade-up">
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png" alt="Adidas">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Logo_FIBA.svg/2560px-Logo_FIBA.svg.png" alt="FIBA">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Logo_FFBB.svg/1200px-Logo_FFBB.svg.png" alt="FFBB">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/2560px-Under_armour_logo.svg.png" alt="Under Armour">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Spalding_logo.svg/2560px-Spalding_logo.svg.png" alt="Spalding">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Wilson_Sporting_Goods_logo.svg/2560px-Wilson_Sporting_Goods_logo.svg.png" alt="Wilson">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Jordan_logo.svg/1200px-Jordan_logo.svg.png" alt="Jordan">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Puma_AG.svg/2560px-Puma_AG.svg.png" alt="Puma">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/AND1_logo.svg/2560px-AND1_logo.svg.png" alt="AND1">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Decathlon_logo.svg/2560px-Decathlon_logo.svg.png" alt="Decathlon">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Logo_NBA.svg/1200px-Logo_NBA.svg.png" alt="NBA">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Olympic_rings_without_rims.svg/2560px-Olympic_rings_without_rims.svg.png" alt="Olympic Committee">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Logo_LNB.svg/1200px-Logo_LNB.svg.png" alt="LNB">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sport_en_France_logo_2019.svg/1200px-Sport_en_France_logo_2019.svg.png" alt="Sport en France">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/BeIN_Sports_logo.svg/2560px-BeIN_Sports_logo.svg.png" alt="BeIN Sports">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Canal%2B_Sport_2015.png/1200px-Canal%2B_Sport_2015.png" alt="Canal+ Sport">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Eurosport_Logo_2015.svg/2560px-Eurosport_Logo_2015.svg.png" alt="Eurosport">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/NBC_Sports_2023.svg/2560px-NBC_Sports_2023.svg.png" alt="NBC Sports">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/2560px-ESPN_wordmark.svg.png" alt="ESPN">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Peak_Sport_logo.svg/2560px-Peak_Sport_logo.svg.png" alt="Peak">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Li-Ning_logo.svg/2560px-Li-Ning_logo.svg.png" alt="Li-Ning">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Anta_Sports_logo.svg/2560px-Anta_Sports_logo.svg.png" alt="Anta">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Molten_Sports_logo.svg/2560px-Molten_Sports_logo.svg.png" alt="Molten">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gatorade_logo.svg/2560px-Gatorade_logo.svg.png" alt="Gatorade">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Red_Bull_logo.svg/2560px-Red_Bull_logo.svg.png" alt="Red Bull">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Converse_logo.svg/2560px-Converse_logo.svg.png" alt="Converse">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/New_Balance_logo.svg/2560px-New_Balance_logo.svg.png" alt="New Balance">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Champion_logo.svg/2560px-Champion_logo.svg.png" alt="Champion">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Asics_logo.svg/2560px-Asics_logo.svg.png" alt="Asics">
+                </div>
+                <div class="partner-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RMC_Sport_logo_2018.svg/2560px-RMC_Sport_logo_2018.svg.png" alt="RMC Sport">
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">KAVI</a>
+                    <p>L'excellence du Freestyle Basket</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="shows.html">Shows</a></li>
+                            <li><a href="projets.html">Projets</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@kavi-freestyle.com">contact@kavi-freestyle.com</a></li>
+                            <li><a href="tel:+33600000000">+33 6 XX XX XX XX</a></li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kavi Freestyle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

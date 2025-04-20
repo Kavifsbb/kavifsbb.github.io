@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Projets - Kavi Freestyle</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .projets-section {
+            padding-top: 120px;
+            min-height: 100vh;
+            background: #f8f8f8;
+        }
+
+        .project-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 8rem;
+        }
+
+        .intro-content {
+            max-width: 500px;
+        }
+
+        .intro-content h1 {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .intro-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .intro-image {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .intro-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15rem;
+            padding: 4rem 0;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .project-item:nth-child(even) {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
+        .project-item:nth-child(even) .project-content {
+            order: 2;
+        }
+
+        .project-media {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .project-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .project-item:hover .project-media img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-number {
+            font-size: 12rem;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.03);
+            position: absolute;
+            top: -6rem;
+            left: -2rem;
+            z-index: -1;
+        }
+
+        .project-category {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #000;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .project-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .project-link i {
+            margin-left: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover i {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 1024px) {
+            .project-intro {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .intro-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .intro-content h1 {
+                font-size: 4rem;
+            }
+
+            .project-list {
+                gap: 8rem;
+            }
+
+            .project-item,
+            .project-item:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item:nth-child(even) .project-content {
+                order: 0;
+            }
+
+            .project-media {
+                height: 50vh;
+            }
+
+            .project-number {
+                font-size: 8rem;
+                top: -4rem;
+                left: -1rem;
+            }
+
+            .project-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .intro-content h1 {
+                font-size: 3rem;
+            }
+
+            .intro-image {
+                height: 400px;
+            }
+
+            .project-media {
+                height: 40vh;
+            }
+
+            .project-number {
+                font-size: 6rem;
+                top: -3rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="logo">KAVI</a>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html">Accueil</a>
+                <a href="shows.html">Shows</a>
+                <a href="projets.html" class="active">Projets</a>
+                <a href="academie.html">Académie</a>
+                <a href="divers.html">Divers</a>
+                <a href="contact.html" >Contact</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    
+
+    <!-- Projets Section -->
+    <section class="projets-section">
+        <div class="container">
+            <div class="project-intro">
+                <div class="intro-content" data-aos="fade-right">
+                    <h1>Mes Projets<br>Créatifs</h1>
+                    <p>Explorez notre univers où le freestyle basket devient une forme d'art. Chaque projet est une nouvelle opportunité de repousser les limites de la créativité et de l'innovation.</p>
+                </div>
+                <div class="intro-image" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFza2V0YmFsbCUyMGZyZWVzdHlsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Freestyle Basketball">
+                </div>
+            </div>
+
+            <div class="project-list">
+                <article class="project-item" data-aos="fade-up">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1519684093736-61f49e250672?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhc2tldGJhbGwlMjBwZXJmb3JtYW5jZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Shows de freestyle">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-number">01</span>
+                        <span class="project-category">Performance</span>
+                        <h2 class="project-title">Shows Spectaculaires</h2>
+                        <p class="project-description">Des performances uniques qui mêlent technique, créativité et spectacle. Mes shows sont conçus pour créer des moments inoubliables et inspirer votre public.</p>
+                        <a href="shows.html" class="project-link">
+                            Découvrir les shows
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-item" data-aos="fade-up">
+                    <div class="project-media">
+                        <img src="https://event2be.fr/wp-content/uploads/2021/02/basket-freestyle-performer-urbain-street-brisko.jpg" alt="Académie Vagabond">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-number">02</span>
+                        <span class="project-category">Formation</span>
+                        <h2 class="project-title">Académie Vagabond</h2>
+                        <p class="project-description">Un espace d'apprentissage unique où la passion rencontre l'expertise. Développez vos compétences en freestyle basket dans un environnement professionnel et bienveillant.</p>
+                        <a href="academie.html" class="project-link">
+                            Explorer l'académie
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-item" data-aos="fade-up">
+                    <div class="project-media">
+                        <img src="https://event2be.fr/wp-content/uploads/2021/02/basket-freestyle-performer-urbain-street-brisko.jpg" alt="Workshop">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-number">03</span>
+                        <span class="project-category">Workshop</span>
+                        <h2 class="project-title">Sessions Intensives</h2>
+                        <p class="project-description">Des workshops immersifs pour perfectionner votre technique et échanger avec d'autres passionnés. Une expérience unique d'apprentissage et de partage.</p>
+                        <a href="#" class="project-link">
+                            Voir les workshops
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-item" data-aos="fade-up">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHRhbGslMjBzaG93fGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Talk-show">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-number">04</span>
+                        <span class="project-category">Média</span>
+                        <h2 class="project-title">Talk-Shows</h2>
+                        <p class="project-description">Des conversations enrichissantes sur le freestyle basket, la performance et le développement personnel. Découvrez les coulisses et les secrets du métier.</p>
+                        <a href="#" class="project-link">
+                            Voir les épisodes
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accueil des projets Section -->
+    <section class="accueil-projets-section" style="background: #fff; padding: 60px 0;">
+        <div class="container" data-aos="fade-up">
+            <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem;">Accueil des projets</h2>
+            <p style="font-size:1.1rem; max-width:700px; color:#444;">Bienvenue dans l'espace dédié à la présentation de nos projets créatifs. Ici, chaque initiative met en lumière l'originalité, la passion et la diversité des talents qui composent notre collectif.</p>
+        </div>
+    </section>
+
+    <!-- Présence digitale Section -->
+    <section class="presence-digitale-section" style="background: #f3f6fa; padding: 60px 0;">
+        <div class="container" data-aos="fade-up">
+            <h2 style="font-size:2.5rem; font-weight:700; margin-bottom:1rem;">Présence digitale</h2>
+            <p style="font-size:1.1rem; max-width:700px; color:#444;">Notre présence digitale est le reflet d'une connexion pluridisciplinaire entre le freestyle basket, la vidéo, la photo et le design. À travers nos plateformes, nous partageons des contenus originaux, collaborons avec des artistes variés et créons des ponts entre les disciplines.</p>
+            <div class="carrousel-photos" style="margin-top:2rem; display:flex; gap:1.5rem; overflow-x:auto;">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Photo 1" style="height:180px; border-radius:12px;">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Photo 2" style="height:180px; border-radius:12px;">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Photo 3" style="height:180px; border-radius:12px;">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Photo 4" style="height:180px; border-radius:12px;">
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">KAVI</a>
+                    <p>L'excellence du Freestyle Basket</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="shows.html">Shows</a></li>
+                            <li><a href="projets.html">Projets</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@kavi-freestyle.com">contact@kavi-freestyle.com</a></li>
+                            <li><a href="tel:+33600000000">+33 6 XX XX XX XX</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kavi Freestyle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile navbar toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            menuBtn.classList.toggle('active');
+        });
+        
+        // Close nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuBtn.classList.remove('active');
+            });
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
