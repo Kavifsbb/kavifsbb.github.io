@@ -873,6 +873,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+.gallery-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 0.9;
+    margin-top: 3rem;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .container {
