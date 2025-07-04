@@ -74,27 +74,55 @@
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
             margin-top: 4rem;
             text-align: center;
         }
 
         .stat-item {
-            padding: 2rem;
+            background: #18181b;
+            border-radius: 28px;
+            box-shadow: 0 0 24px 0 #a259ff44, 0 2px 8px 0 #000a;
+            padding: 2.5rem 1.5rem 2rem 1.5rem;
+            min-width: 180px;
+            max-width: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .stat-item:hover {
+            box-shadow: 0 0 36px 0 #a259ff99, 0 4px 16px 0 #000c;
+            transform: translateY(-6px) scale(1.04);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #A259FF;
+            margin-bottom: 0.7rem;
+            filter: drop-shadow(0 0 6px #a259ff66);
         }
 
         .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 12px #a259ff33;
         }
 
         .stat-label {
-            font-size: 1.2rem;
-            color: var(--black);
+            font-size: 1.05rem;
+            color: #bdbdbd;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
         }
 
         .crew-international {
@@ -136,11 +164,21 @@
             }
 
             .stats-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
             }
 
             .intro-content h1 {
                 font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .stats-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
             }
         }
     </style>
@@ -220,14 +258,17 @@
                     <h2 class="section-title" data-aos="fade-up">L'Académie en Chiffres</h2>
                     <div class="stats-grid">
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-icon">🏆</div>
                             <div class="stat-number">7+</div>
                             <div class="stat-label">Années d'Expérience</div>
                         </div>
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-icon">👥</div>
                             <div class="stat-number">1000+</div>
                             <div class="stat-label">Élèves Formés</div>
                         </div>
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-icon">🌍</div>
                             <div class="stat-number">20+</div>
                             <div class="stat-label">Pays Représentés</div>
                         </div>
