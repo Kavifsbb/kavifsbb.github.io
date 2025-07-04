@@ -485,7 +485,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-text {
-    color: var(--white);
+    color: var(--black);
     font-size: 1.1rem;
 }
 
@@ -643,14 +643,12 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 85%;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%) brightness(0);
-    opacity: 0.4;
+    filter: none;
+    opacity: 1;
     transition: var(--transition-smooth);
 }
 
 .partner-card:hover img {
-    filter: grayscale(0%) brightness(1);
-    opacity: 1;
     transform: scale(1.1);
 }
 
