@@ -1602,7 +1602,8 @@ h1, h2, h3, h4, h5, h6 {
   .accueil-projets-section,
   .accueil-projets-section *,
   .presence-digitale-section,
-  .presence-digitale-section * {
+  .presence-digitale-section *,
+  .academie-section {
     margin-left: 1rem;
     margin-right: 1rem;
   }
