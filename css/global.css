@@ -1588,3 +1588,22 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 }
+
+@media (max-width: 600px) {
+  .projets-section,
+  .projets-header,
+  .projets-header h1,
+  .projets-header p,
+  .project-card,
+  .project-image,
+  .project-content,
+  .presence-digital,
+  .presence-digital *,
+  .accueil-projets-section,
+  .accueil-projets-section *,
+  .presence-digitale-section,
+  .presence-digitale-section * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

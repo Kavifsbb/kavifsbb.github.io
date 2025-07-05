@@ -383,25 +383,7 @@
         </header>
 
         <div class="shows-grid">
-            <article class="show-card" data-aos="fade-up">
-                <img src="../assets/images/shows/Screenshot_20240610_215629_Video Player.jpg" alt="Spectacle" class="show-image">
-                <div class="show-content">
-                    <span class="show-type">Spectacle</span>
-                    <h2 class="show-title">Shows & Festivals</h2>
-                    <p class="show-description">Des performances artistiques uniques mêlant freestyle basket, danse et musique. Une expérience immersive pour tous les publics.</p>
-                    <a href="contact.html" class="show-link">En savoir plus</a>
-                </div>
-            </article>
-
-            <article class="show-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="../assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024 22_52_15.jpg" alt="Collaboration" class="show-image">
-                <div class="show-content">
-                    <span class="show-type">Collaboration</span>
-                    <h2 class="show-title">Projets artistiques</h2>
-                    <p class="show-description">Collaborations avec d'autres artistes, danseurs ou musiciens. Création de performances uniques et innovantes.</p>
-                    <a href="contact.html" class="show-link">Collaborer</a>
-                </div>
-            </article>
+            <!-- Les images sont chargées dynamiquement par JS -->
         </div>
 
         <section class="gallery-section">
@@ -500,5 +482,54 @@
         });
     </script>
     <script src="../js/main.js"></script>
+    <script>
+    const images = [
+      "../assets/images/shows/Tony Parker Kavi 3.png",
+      "../assets/images/shows/Tony Parker Kavi 1.jpg",
+      "../assets/images/shows/Snapchat-119756544.jpg",
+      "../assets/images/shows/Screenshot_20240610_215629_Video Player.jpg",
+      "../assets/images/shows/P1088692.jpg",
+      "../assets/images/shows/P1088516.jpg",
+      "../assets/images/shows/JBL Store_R5_9739.jpg",
+      "../assets/images/shows/JBL Store_R5_9696.jpg",
+      "../assets/images/shows/20231202-0339-copie-2000x1333.jpg",
+      "../assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024 22_52_15.jpg"
+    ];
+
+    const showsGrid = document.querySelector('.shows-grid');
+    let loaded = 0;
+    const batch = 4; // nombre d'images à charger à chaque scroll
+
+    function createShowCard(src, alt = "Show") {
+      const article = document.createElement('article');
+      article.className = "show-card";
+      article.innerHTML = `
+        <img src="${src}" alt="${alt}" class="show-image" loading="lazy">
+        <div class="show-content">
+          <span class="show-type">Show</span>
+          <h2 class="show-title">Performance</h2>
+          <p class="show-description">Show de freestyle basket.</p>
+          <a href="contact.html" class="show-link">En savoir plus</a>
+        </div>
+      `;
+      return article;
+    }
+
+    function loadMoreImages() {
+      for (let i = 0; i < batch && loaded < images.length; i++, loaded++) {
+        showsGrid.appendChild(createShowCard(images[loaded]));
+      }
+    }
+
+    // Initial load
+    loadMoreImages();
+
+    // Infinite scroll
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+        loadMoreImages();
+      }
+    });
+    </script>
 </body>
 </html>
