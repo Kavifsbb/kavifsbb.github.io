@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /backup/
+Disallow: /*.pdf$
+
+# Sitemap
+Sitemap: https://kavifreestylebasket.com/sitemap.xml
+
+# Délai entre les requêtes
+Crawl-delay: 1 

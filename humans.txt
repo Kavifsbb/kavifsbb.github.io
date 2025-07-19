@@ -1,0 +1,11 @@
+/* TEAM */
+Freestyler: Kavi Thiagarajah
+Site: kavifreestylebasket.com
+Instagram: @kavi_fsbb
+Email: kavi.fsbball@outlook.com
+Location: Paris, Île-de-France, France
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript
+Components: Freestyle basket, spectacles, formations
+Software: VS Code, Adobe Creative Suite 
