@@ -1,0 +1,162 @@
+.workshop-section {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+.workshop-intro {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.workshop-intro h1 {
+    font-size: 2.8rem;
+    font-family: var(--font-display);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+
+.workshop-intro p {
+    font-size: 1.1rem;
+    color: var(--gray-200);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.phases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.phase {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid var(--gray-400);
+    box-shadow: none;
+    overflow: hidden;
+    transition: border-color 0.2s;
+    position: relative;
+}
+
+.phase:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.phase:nth-child(even) {
+    left: 0;
+}
+
+.phase:nth-child(odd) {
+    left: 32px;
+}
+
+.phase-image {
+    flex: 0 0 260px;
+    width: 260px;
+    min-width: 180px;
+    max-width: 320px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: var(--black);
+    border-right: 1px solid var(--gray-400);
+}
+
+.phase:nth-child(odd) .phase-image {
+    border-right: none;
+    border-left: 1px solid var(--gray-400);
+}
+
+.phase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%) brightness(0.95);
+    transition: filter 0.3s;
+    display: block;
+}
+
+.phase:hover .phase-image img {
+    filter: grayscale(0%) brightness(1);
+}
+
+.phase-content {
+    flex: 1;
+    padding: 1.8rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+}
+
+.phase-title {
+    font-size: 1.35rem;
+    font-family: var(--font-display);
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.phase-text {
+    font-size: 1rem;
+    color: var(--gray-200);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@media (max-width: 900px) {
+    .phase {
+        flex-direction: column !important;
+        left: 0 !important;
+        align-items: stretch;
+    }
+    .phase-image {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        height: 140px;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid var(--gray-400);
+    }
+    .phase-image img {
+        width: 100%;
+        height: 100%;
+        min-height: 140px;
+        object-fit: cover;
+    }
+    .phase-content {
+        padding: 1.2rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .workshop-intro h1 {
+        font-size: 1.5rem;
+    }
+    .phase-title {
+        font-size: 1rem;
+    }
+    .phase-content {
+        padding: 0.8rem 0.3rem;
+    }
+    .phase-image {
+        height: 80px;
+    }
+    .phase-image img {
+        min-height: 80px;
+    }
+    .phases-list {
+        gap: 1.2rem;
+    }
+} 
