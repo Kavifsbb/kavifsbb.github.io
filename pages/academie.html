@@ -73,56 +73,77 @@
             color: var(--primary);
         }
 
-        .stats-grid {
+        /* Nouveaux styles pour les statistiques de l'académie */
+        .academie-stats-grid {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 3rem;
             margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .academie-stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 3rem 2rem;
             text-align: center;
-        }
-
-        .stat-item {
-            background: #18181b;
-            border-radius: 28px;
-            box-shadow: 0 0 24px 0 #a259ff44, 0 2px 8px 0 #000a;
-            padding: 2.5rem 1.5rem 2rem 1.5rem;
-            min-width: 180px;
-            max-width: 220px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            min-width: 280px;
             position: relative;
-            transition: box-shadow 0.3s, transform 0.3s;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
         }
 
-        .stat-item:hover {
-            box-shadow: 0 0 36px 0 #a259ff99, 0 4px 16px 0 #000c;
-            transform: translateY(-6px) scale(1.04);
+        .academie-stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
-        .stat-icon {
-            font-size: 2.5rem;
-            color: #A259FF;
-            margin-bottom: 0.7rem;
-            filter: drop-shadow(0 0 6px #a259ff66);
+        .academie-stat-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        .stat-number {
-            font-size: 2.6rem;
+        .academie-stat-item:hover::before {
+            opacity: 1;
+        }
+
+        .academie-stat-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .academie-stat-number {
+            font-size: 3.5rem;
             font-weight: 800;
-            color: #fff;
-            margin-bottom: 0.3rem;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 12px #a259ff33;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            display: block;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -1px;
         }
 
-        .stat-label {
-            font-size: 1.05rem;
-            color: #bdbdbd;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 0.2rem;
+        .academie-stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.4;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
         }
 
         .crew-international {
@@ -163,10 +184,15 @@
                 grid-template-columns: 1fr;
             }
 
-            .stats-grid {
+            .academie-stats-grid {
                 flex-direction: column;
                 align-items: center;
                 gap: 2rem;
+            }
+
+            .academie-stat-item {
+                min-width: 260px;
+                padding: 2.5rem 1.5rem;
             }
 
             .intro-content h1 {
@@ -175,10 +201,12 @@
         }
 
         @media (max-width: 900px) {
-            .stats-grid {
-                flex-direction: column;
-                align-items: center;
+            .academie-stats-grid {
                 gap: 2rem;
+            }
+            
+            .academie-stat-item {
+                min-width: 250px;
             }
         }
     </style>
@@ -222,7 +250,7 @@
                 <div class="academie-intro">
                     <div class="intro-content" data-aos="fade-right">
                         <h1>Académie<br>Vagabond</h1>
-                        <p>Porté par l’association Vagabond Crew, l’académie sont des formations basés sur une pédagogie unique destinés à fournir aux pratiquant s les bases techniques qui leur permettront par la suite d’accéder à une pratique de haut-niveau. Le principal objectif es t d’acquérir les bases indispensables au battle ou à la création chorégraphique. 4 disciplines sont proposés : Breakdance, Freestyle Basket, Danse Hip-hop et Tricking.</p>
+                        <p>Portée par l'association Vagabond Crew, l'équipe de breakdance la plus titrée du monde, l'académie propose en réalité, 3 disciplines en plus du freestyle basket : breakdance, danse hip-hop et trickling. Le pôle freestyle basket est une formation destinée à fournir aux pratiquants les bases indispensables aux battles ou à la création chorégraphique avec une orientation hip-hop et danse urbaine.</p>
                         </div>
                     <div class="intro-image" data-aos="fade-left">
                         <img src="https://image.ausha.co/c4j7wZxZB1OjxvcqsS6EMh50bLu8pm2ux990BBMv_400x400.jpeg" alt="Académie Vagabond">
@@ -237,35 +265,35 @@
                             <h3>CRÉATIVITÉ</h3>
                             <p>La créativité est au cœur de la pratique, car elle ne
                                 possède que très peu de limites.
-                                Le Freestyle basket, c’est avant tout le développement de
-                                nouvelles combinaisons pour s’exprimer librement son
+                                Le Freestyle basket, c'est avant tout le développement de
+                                nouvelles combinaisons pour s'exprimer librement son
                                 imagination.
                                 </p>
                         </div>
                         <div class="objectif-item" data-aos="fade-up" data-aos-delay="200">
                             <h3>DÉPASSEMENT DE SOI</h3>
                             <p>Que le public soient basketteur, danseurs ou non, le Freestyle Basket
-                                permettent d’améliorer la coordination, la souplesse ou la
+                                permettent d'améliorer la coordination, la souplesse ou la
                                 proprioception.
-                                Faire du Freestyle Basket c’est travailler dur et surmonter la
-                                difficulté, l’épreuve. Qu’elles soient biomécaniques, bioénergétique
+                                Faire du Freestyle Basket c'est travailler dur et surmonter la
+                                difficulté, l'épreuve. Qu'elles soient biomécaniques, bioénergétique
                                 ou neuro-informationnelles.
                                 </p>
                         </div>
                         <div class="objectif-item" data-aos="fade-up" data-aos-delay="300">
                             <h3>INCLUSION & VIVRE-ENSEMBLE</h3>
-                            <p>Le Freestyle Basket, c’est aussi une discipline inclusive.
-                                Chacun peut la pratiquer . C’est une façon de s’exprimer, de
-                                s’amuser en pratiquant une activité physique et
+                            <p>Le Freestyle Basket, c'est aussi une discipline inclusive.
+                                Chacun peut la pratiquer . C'est une façon de s'exprimer, de
+                                s'amuser en pratiquant une activité physique et
                                 sportive/artistique. Cette activité est riche en divertissement
                                 car elle permet de se prendre au jeu, seul ou à plusieurs.</p>
                         </div>
                         <div class="objectif-item" data-aos="fade-up" data-aos-delay="400">
                             <h3>EXPRESSION</h3>
-                            <p>Le Freestyle Basket, c’est aussi une discipline inspiré et lié à la
+                            <p>Le Freestyle Basket, c'est aussi une discipline inspiré et lié à la
                                 culture Hip-hop, ou le mouvement est un art, une philosophie.
-                                L’expression corporelle est au coeur de la discipline, c’est une
-                                manière de s’exprimer pour le pratiquant.
+                                L'expression corporelle est au coeur de la discipline, c'est une
+                                manière de s'exprimer pour le pratiquant.
                                 </p>
                         </div>
                     </div>
@@ -274,21 +302,16 @@
                 <!-- Statistiques -->
                 <div class="section-content">
                     <h2 class="section-title" data-aos="fade-up">L'Académie en Chiffres</h2>
-                    <div class="stats-grid">
-                        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                            <div class="stat-icon">🏆</div>
-                            <div class="stat-number">7+</div>
-                            <div class="stat-label">Années d'Expérience</div>
+                    <div class="academie-stats-grid">
+                        <div class="academie-stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="academie-stat-icon">🎪</div>
+                            <div class="academie-stat-number">20+</div>
+                            <div class="academie-stat-label">Élèves ont pu se produire sur scène en moins de 2 ans</div>
                         </div>
-                        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="stat-icon">👥</div>
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Élèves Formés</div>
-                        </div>
-                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="stat-icon">🌍</div>
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Pays Représentés</div>
+                        <div class="academie-stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="academie-stat-icon">🏆</div>
+                            <div class="academie-stat-number">12</div>
+                            <div class="academie-stat-label">Spectacles réalisés par mes élèves en 2 ans</div>
                         </div>
                     </div>
                 </div>
