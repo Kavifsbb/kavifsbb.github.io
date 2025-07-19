@@ -1,390 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shows - Kavi Freestyle</title>
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/shows.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
-        .shows-page {
-            min-height: 100vh;
-            padding-top: 120px;
-            padding-bottom: var(--spacing-xl);
-        }
-
-        .shows-header {
-            position: relative;
-            padding: var(--spacing-xl) 0;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .shows-title {
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.9;
-            margin-bottom: var(--spacing-md);
-            color: var(--text-color);
-        }
-
-        .shows-subtitle {
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            color: var(--gray-300);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .shows-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: var(--spacing-lg);
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-
-        .show-card {
-            grid-column: span 6;
-            position: relative;
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            background: var(--black);
-        }
-
-        .show-card:nth-child(4n + 1) {
-            grid-column: 2 / span 6;
-        }
-
-        .show-card:nth-child(4n + 2) {
-            grid-column: 8 / span 4;
-        }
-
-        .show-card:nth-child(4n + 3) {
-            grid-column: 4 / span 4;
-        }
-
-        .show-card:nth-child(4n + 4) {
-            grid-column: 8 / span 4;
-        }
-
-        .show-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-            transition: var(--transition-smooth);
-        }
-
-        .show-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: var(--spacing-md);
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            transform: translateY(30%);
-            transition: var(--transition-smooth);
-        }
-
-        .show-card:hover .show-image {
-            opacity: 0.6;
-            transform: scale(1.05);
-        }
-
-        .show-card:hover .show-content {
-            transform: translateY(0);
-        }
-
-        .show-type {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--gray-100);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .show-title {
-            font-size: 1.5rem;
-            color: var(--white);
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .show-description {
-            font-size: 0.875rem;
-            color: var(--gray-200);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.6;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: var(--transition-smooth);
-        }
-
-        .show-card:hover .show-description {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .show-link {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding-bottom: 2px;
-            border-bottom: 1px solid var(--white);
-            transition: var(--transition-smooth);
-        }
-
-        .show-link:hover {
-            color: var(--gray-200);
-            border-color: var(--gray-200);
-        }
-
-        .shows-cta {
-            text-align: center;
-            margin-top: var(--spacing-xl);
-            padding: var(--spacing-xl) 0;
-        }
-
-        .cta-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: var(--black);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .cta-text {
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            color: var(--gray-300);
-            margin-bottom: var(--spacing-lg);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .gallery-section {
-            padding: var(--spacing-xxl) 0;
-            position: relative;
-        }
-
-        .gallery-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-            position: relative;
-        }
-
-        .gallery-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: var(--spacing-xl);
-            padding: 0 var(--spacing-lg);
-        }
-
-        .gallery-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 0.9;
-        }
-
-        .gallery-subtitle {
-            font-family: var(--font-mono);
-            color: var(--gray-300);
-            margin-top: var(--spacing-xs);
-        }
-
-        .gallery-grid {
-            columns: 3 260px;
-            column-gap: var(--spacing-md);
-            padding: 0 var(--spacing-lg);
-        }
-
-        .gallery-item {
-            display: block;
-            margin-bottom: var(--spacing-md);
-            break-inside: avoid;
-            border-radius: 18px;
-            background: var(--gray-900);
-            box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-            overflow: hidden;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 18px;
-            transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-            object-fit: cover;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item.vertical {
-            grid-row: span 2;
-        }
-
-        .gallery-item.horizontal {
-            grid-column: span 2;
-        }
-
-        .gallery-item.large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .gallery-item.extra-tall {
-            grid-row: span 3;
-        }
-
-        .gallery-item.extra-wide {
-            grid-column: span 3;
-        }
-
-        .gallery-item.medium {
-            grid-column: span 2;
-            grid-row: span 1;
-        }
-
-        .gallery-item.medium-tall {
-            grid-column: span 1;
-            grid-row: span 2;
-        }
-
-        .gallery-item.xl {
-            grid-column: span 3;
-            grid-row: span 2;
-        }
-
-        .gallery-nav {
-            position: fixed;
-            left: var(--spacing-md);
-            top: 50%;
-            transform: translateY(-50%) rotate(-90deg);
-            transform-origin: left center;
-            display: flex;
-            gap: var(--spacing-lg);
-            z-index: 10;
-        }
-
-        .gallery-nav a {
-            font-family: var(--font-mono);
-            color: var(--gray-300);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.875rem;
-            transition: var(--transition-smooth);
-        }
-
-        .gallery-nav a:hover,
-        .gallery-nav a.active {
-            color: var(--black);
-        }
-
-        .gallery-nav a.active {
-            position: relative;
-        }
-
-        .gallery-nav a.active::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 50%;
-            width: 15px;
-            height: 1px;
-            background: var(--black);
-        }
-
-        @media (max-width: 900px) {
-            .gallery-grid {
-                columns: 2 180px;
-                column-gap: var(--spacing-sm);
-                padding: 0 8px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .gallery-grid {
-                columns: 1 100%;
-                column-gap: var(--spacing-xs);
-                padding: 0 4px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .show-card {
-                grid-column: span 12 !important;
-            }
-
-            .shows-grid {
-                gap: var(--spacing-sm);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .shows-page {
-                padding-top: 100px;
-            }
-
-            .shows-header {
-                padding: var(--spacing-lg) var(--spacing-md);
-            }
-        }
-    </style>
+    
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Plyr CSS -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-      <a href="../index.html" class="logo">KAVI</a>
-      <button class="hamburger" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="../index.html">Accueil</a></li>
-        <li><a href="shows.html">Shows</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="academie.html">Académie</a></li>
-        <li><a href="divers.html">Divers</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <a href="../index.html" class="logo">KAVI</a>
+        <button class="hamburger" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="academie.html">Académie</a></li>
+            <li><a href="divers.html">Divers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-    <script>
-      // Hamburger menu toggle
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-      hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
-      // Close menu on link click (mobile)
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-        });
-      });
-    </script>
+
     <main class="shows-page">
         <header class="shows-header" data-aos="fade-up">
             <h1 class="shows-title">Shows & Performances</h1>
-            <p class="shows-subtitle">Un show Freestyle Basket est une performance artistique et sportive mettant en scène des joueurs spécialisés dans le maniement du ballon de basket-ball. Accompagné de musique rythmé et d’effets visuels, le show Freestyle Basket peut inclure des interaction avec le public renforçant ainsi son caractère immersif et dynamique. Il est présenté lors d’évènements sportifs, culturels, commerciaux ou d’entreprise qui mêle divertissement et démonstration de haut niveau.</p>
+            <p class="shows-subtitle">Un show Freestyle Basket est une performance artistique et sportive mettant en
+                scène des joueurs spécialisés dans le maniement du ballon de basket-ball. Accompagné de musique rythmé
+                et d'effets visuels, le show Freestyle Basket peut inclure des interactions avec le public renforçant
+                ainsi son caractère immersif et dynamique. Il est présenté lors d'évènements sportifs, culturels,
+                commerciaux ou d'entreprise qui mêle divertissement et démonstration de haut niveau.</p>
         </header>
-
-        <div class="shows-grid">
-            <!-- Les images sont chargées dynamiquement par JS -->
-        </div>
 
         <section class="gallery-section">
             <div class="gallery-container">
@@ -424,21 +89,126 @@
                         <img src="../assets/images/shows/20231202-0339-copie-2000x1333.jpg" alt="Show 9">
                     </article>
                     <article class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="../assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024 22_52_15.jpg" alt="Show 10">
+                        <img src="../assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024 22_52_15.jpg"
+                            alt="Show 10">
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Vidéos -->
+        <section class="video-section-container">
+            <div class="video-section-header">
+                <h2 class="video-section-title">Vidéos</h2>
+                <p class="video-section-subtitle">Découvrez mes performances en mouvement</p>
+            </div>
+            
+            <div class="owl-carousel video-section">
+                <!-- Toutes les vidéos sans classes spécifiques - détection automatique -->
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/lv_0_20250616170744.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                
+                <!-- Vidéos horizontales standard -->
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show 1ere scène Internationale.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Adidas Arena.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Bercy Accor Arena.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Black Dunk.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show ESSEC & Ministre des Sports 2023.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Noa_Dorian.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Quai54 Roland-Garros.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <!-- Vidéo portrait croppée -->
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Tony Parker.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show UNSS.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <video class="js-player" crossorigin playsinline>
+                            <source src="../assets/videos/Shows/Show Vendée.mp4"
+                                type="video/mp4" size="720">
+                        </video>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="shows-cta" data-aos="fade-up">
             <h2 class="cta-title">Créons ensemble votre événement</h2>
-            <p class="cta-text">Chaque show est unique et personnalisé selon vos besoins. Contactez-moi pour discuter de votre projet et créer une expérience mémorable.</p>
+            <p class="cta-text">Chaque show est unique et personnalisé selon vos besoins. Contactez-moi pour discuter de
+                votre projet et créer une expérience mémorable.</p>
             <a href="contact.html" class="btn-modern">Discuter de votre projet</a>
         </section>
     </main>
 
-     <!-- Footer -->
-     <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -473,63 +243,182 @@
             </div>
         </div>
     </footer>
+
+    <!-- jQuery (requis en premier) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
     <script>
+        // Navigation mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // AOS initialization
         AOS.init({
             duration: 800,
             offset: 100,
             once: true
         });
-    </script>
-    <script src="../js/main.js"></script>
-    <script>
-    const images = [
-      "../assets/images/shows/Tony Parker Kavi 3.png",
-      "../assets/images/shows/Tony Parker Kavi 1.jpg",
-      "../assets/images/shows/Snapchat-119756544.jpg",
-      "../assets/images/shows/Screenshot_20240610_215629_Video Player.jpg",
-      "../assets/images/shows/P1088692.jpg",
-      "../assets/images/shows/P1088516.jpg",
-      "../assets/images/shows/JBL Store_R5_9739.jpg",
-      "../assets/images/shows/JBL Store_R5_9696.jpg",
-      "../assets/images/shows/20231202-0339-copie-2000x1333.jpg",
-      "../assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024 22_52_15.jpg"
-    ];
 
-    const showsGrid = document.querySelector('.shows-grid');
-    let loaded = 0;
-    const batch = 4; // nombre d'images à charger à chaque scroll
+        // Attendre que jQuery soit chargé
+        $(document).ready(function() {
+            // Fonction pour détecter et ajuster les dimensions vidéo
+            function adjustVideoContainers() {
+                $('.js-player').each(function(index) {
+                    const video = this;
+                    const $item = $(video).closest('.item');
+                    const $container = $(video).closest('.item > div');
 
-    function createShowCard(src, alt = "Show") {
-      const article = document.createElement('article');
-      article.className = "show-card";
-      article.innerHTML = `
-        <img src="${src}" alt="${alt}" class="show-image" loading="lazy">
-        <div class="show-content">
-          <span class="show-type">Show</span>
-          <h2 class="show-title">Performance</h2>
-          <p class="show-description">Show de freestyle basket.</p>
-          <a href="contact.html" class="show-link">En savoir plus</a>
-        </div>
-      `;
-      return article;
-    }
+                    // Écouter quand les métadonnées de la vidéo sont chargées
+                    video.addEventListener('loadedmetadata', function() {
+                        const videoWidth = video.videoWidth;
+                        const videoHeight = video.videoHeight;
+                        const aspectRatio = videoWidth / videoHeight;
 
-    function loadMoreImages() {
-      for (let i = 0; i < batch && loaded < images.length; i++, loaded++) {
-        showsGrid.appendChild(createShowCard(images[loaded]));
-      }
-    }
+                        console.log(`Vidéo ${index}: ${videoWidth}x${videoHeight}, ratio: ${aspectRatio.toFixed(2)}`);
 
-    // Initial load
-    loadMoreImages();
+                        // Supprimer les classes existantes
+                        $item.removeClass('reel cropped-portrait auto-portrait auto-landscape auto-square');
 
-    // Infinite scroll
-    window.addEventListener('scroll', () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
-        loadMoreImages();
-      }
-    });
+                        if (aspectRatio < 0.7) {
+                            // Vidéo très verticale (format reel)
+                            $item.addClass('auto-portrait');
+                            $container.css({
+                                'aspect-ratio': '9/16',
+                                'max-width': '350px',
+                                'min-height': '500px'
+                            });
+                        } else if (aspectRatio < 1.2) {
+                            // Vidéo portrait ou presque carrée
+                            $item.addClass('auto-portrait');
+                            $container.css({
+                                'aspect-ratio': `${Math.max(aspectRatio, 0.6)}/1`,
+                                'max-width': '400px',
+                                'min-height': '450px'
+                            });
+                        } else if (aspectRatio < 1.5) {
+                            // Vidéo légèrement horizontale
+                            $item.addClass('auto-square');
+                            $container.css({
+                                'aspect-ratio': `${aspectRatio}/1`,
+                                'max-width': '500px',
+                                'min-height': '350px'
+                            });
+                        } else {
+                            // Vidéo horizontale standard
+                            $item.addClass('auto-landscape');
+                            $container.css({
+                                'aspect-ratio': '16/9',
+                                'max-width': '100%',
+                                'min-height': '400px'
+                            });
+                        }
+                    });
+
+                    // Forcer le chargement des métadonnées si pas encore fait
+                    if (video.readyState >= 1) {
+                        video.dispatchEvent(new Event('loadedmetadata'));
+                    } else {
+                        video.load();
+                    }
+                });
+            }
+
+            // Configuration Owl Carousel
+            $('.owl-carousel').owlCarousel({
+                stagePadding: 200,
+                loop: true,
+                margin: 10,
+                items: 1,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        stagePadding: 60
+                    },
+                    600: {
+                        items: 1,
+                        stagePadding: 100
+                    },
+                    1000: {
+                        items: 1,
+                        stagePadding: 200
+                    },
+                    1200: {
+                        items: 1,
+                        stagePadding: 250
+                    },
+                    1400: {
+                        items: 1,
+                        stagePadding: 300
+                    },
+                    1600: {
+                        items: 1,
+                        stagePadding: 350
+                    },
+                    1800: {
+                        items: 1,
+                        stagePadding: 400
+                    }
+                },
+                onInitialized: function() {
+                    // Ajuster les conteneurs après l'initialisation du carousel
+                    setTimeout(adjustVideoContainers, 500);
+                }
+            });
+
+            // Configuration Plyr
+            var playerSettings = {
+                controls: ['play-large'],
+                fullscreen: { enabled: false },
+                resetOnEnd: true,
+                hideControls: true,
+                clickToPlay: true,
+                keyboard: false,
+            };
+
+            const players = Plyr.setup('.js-player', playerSettings);
+
+            // Ajuster les conteneurs après l'initialisation de Plyr
+            setTimeout(adjustVideoContainers, 1000);
+
+            // Gestion des vidéos
+            players.forEach(function (instance, index) {
+                instance.on('play', function () {
+                    players.forEach(function (instance1, index1) {
+                        if (instance != instance1) {
+                            instance1.pause();
+                        }
+                    });
+                });
+            });
+
+            // Pause des vidéos lors du changement de slide
+            $('.video-section').on('translated.owl.carousel', function (event) {
+                players.forEach(function (instance, index1) {
+                    instance.pause();
+                });
+            });
+        });
     </script>
 </body>
+
 </html>

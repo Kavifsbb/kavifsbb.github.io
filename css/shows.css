@@ -1,0 +1,319 @@
+.shows-page {
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-bottom: var(--spacing-xl);
+}
+
+.shows-header {
+    position: relative;
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.shows-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 0.9;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.shows-subtitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--gray-300);
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.gallery-section {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-xl);
+    padding: 0 var(--spacing-lg);
+}
+
+.gallery-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 0.9;
+}
+
+.gallery-subtitle {
+    font-family: var(--font-mono);
+    color: var(--gray-300);
+    margin-top: var(--spacing-xs);
+}
+
+.gallery-grid {
+    columns: 3 260px;
+    column-gap: var(--spacing-md);
+    padding: 0 var(--spacing-lg);
+}
+
+.gallery-item {
+    display: block;
+    margin-bottom: var(--spacing-md);
+    break-inside: avoid;
+    border-radius: 18px;
+    background: var(--gray-900);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    object-fit: cover;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Video Section */
+.video-section-container {
+    padding: var(--spacing-xl) 0;
+    background: var(--light-bg);
+}
+
+.video-section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.video-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.video-section-subtitle {
+    font-family: var(--font-mono);
+    color: var(--gray-300);
+}
+
+.video-section .item {
+    opacity: 0.4;
+    transition: .4s ease all;
+    margin: 0 20px;
+    transform: scale(.8);
+    text-align: -webkit-center;
+}
+
+.video-section .owl-item.active .item {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.video-section .owl-item {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+/* Conteneur vidéo adaptatif */
+.video-section .item>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: var(--border-radius);
+    position: relative;
+    aspect-ratio: 16/9;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.video-section video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+}
+
+/* Styles spéciaux pour les vidéos verticales (reels) */
+.video-section .item.reel>div {
+    aspect-ratio: 9/16;
+    max-width: 350px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+/* Styles pour les vidéos portrait croppées (format 16/9 mais contenu vertical cropé) */
+.video-section .item.cropped-portrait>div {
+    aspect-ratio: 9/12;
+    /* Plus proche du format portrait mais moins extrême */
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 450px;
+}
+
+.video-section .item.cropped-portrait video {
+    object-fit: contain;
+    /* Garde tout le contenu visible */
+    width: 100%;
+    height: 100%;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.owl-nav button {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    font-size: 18px !important;
+    transition: var(--transition-smooth);
+}
+
+.owl-nav button:hover {
+    background: var(--primary-color) !important;
+    color: white !important;
+}
+
+.shows-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-text {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--gray-300);
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        columns: 2 180px;
+        column-gap: var(--spacing-sm);
+        padding: 0 8px;
+    }
+
+    .video-section .item {
+        margin: 0;
+        transform: scale(.9);
+    }
+
+    .video-section .item>div {
+        min-height: 300px;
+    }
+
+    .video-section .item.reel>div {
+        max-width: 280px;
+        min-height: 400px;
+    }
+
+    .video-section .item.cropped-portrait>div {
+        max-width: 320px;
+        min-height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shows-page {
+        padding-top: 20px;
+    }
+
+    .shows-header {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .video-section .item>div {
+        min-height: 250px;
+    }
+
+    .video-section .item.reel>div {
+        max-width: 250px;
+        min-height: 350px;
+    }
+
+    .video-section .item.cropped-portrait>div {
+        max-width: 280px;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        columns: 1 100%;
+        column-gap: var(--spacing-xs);
+        padding: 0 4px;
+    }
+
+    .video-section .item>div {
+        min-height: 200px;
+    }
+
+    .video-section .item.reel>div {
+        max-width: 200px;
+        min-height: 300px;
+    }
+
+    .video-section .item.cropped-portrait>div {
+        max-width: 240px;
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .shows-grid {
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section .item.reel>div {
+        max-width: 180px;
+        min-height: 280px;
+    }
+
+    .video-section .item.cropped-portrait>div {
+        max-width: 200px;
+        min-height: 240px;
+    }
+}
