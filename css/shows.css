@@ -92,7 +92,6 @@
 /* Video Section */
 .video-section-container {
     padding: var(--spacing-xl) 0;
-    background: var(--light-bg);
 }
 
 .video-section-header {
