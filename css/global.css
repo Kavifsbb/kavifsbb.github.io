@@ -666,12 +666,13 @@ h1, h2, h3, h4, h5, h6 {
     filter: none;
     opacity: 1;
     transition: var(--transition-smooth);
-    filter: brightness(0) invert(1);
+}
+.logo-noir{
+  filter: brightness(0) invert(1);
 }
 
 .partner-card:hover img {
     transform: scale(1.1);
-    filter: brightness(0) invert(0.9);
 }
 
 @media (max-width: 1024px) {
