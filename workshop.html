@@ -60,26 +60,7 @@
   }
   </script>
 
-    <!-- JSON-LD : Course (atelier / formation) -->
-    <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Course",
-    "name":"Workshop Freestyle Basket & Team-Building",
-    "description":"Atelier d'initiation et de perfectionnement au freestyle basket : technique, coordination, créativité, chorégraphie et cohésion d'équipe.",
-    "provider":{
-      "@type":"Organization",
-      "name":"Kavi Freestyle Basket",
-      "url":"https://kavifreestylebasket.fr/"
-    },
-    "inLanguage":"fr-FR",
-    "audience":{"@type":"Audience","audienceType":"Entreprises, écoles, clubs sportifs"},
-    "areaServed":{"@type":"AdministrativeArea","name":"Paris & Île-de-France"},
-    "url":"https://kavifreestylebasket.fr/workshop.html",
-    "courseCode":"FSB-WS"
-  }
-  </script>
-
+    
     <!-- JSON-LD : FAQPage (SEO long tail workshop / entreprise) -->
     <script type="application/ld+json">
   {
@@ -110,25 +91,67 @@
   }
   </script>
 
-    <!-- (Option) JSON-LD : Person (cohérent avec les autres pages) -->
-    <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Kavi Thiagarajah",
-    "alternateName":"Kavi Freestyle Basket",
-    "jobTitle":"Freestyler professionnel",
-    "description":"Freestyler à Paris : ateliers, team-building, coaching et formation freestyle basket en France.",
-    "url":"https://kavifreestylebasket.fr",
-    "sameAs":[
-      "https://instagram.com/kavi_fsbb",
-      "https://youtube.com/@kavi_fsbb",
-      "https://linkedin.com/in/kavi-thiagarajah"
-    ],
-    "worksFor":{"@type":"Organization","name":"Vagabond Crew International"},
-    "address":{"@type":"PostalAddress","addressRegion":"Île-de-France","addressCountry":"FR"}
-  }
-  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "@id": "https://kavifreestylebasket.fr/workshop#course",
+      "name": "Workshop Freestyle Basket & Team-Building",
+      "description": "Atelier d'initiation et de perfectionnement au freestyle basket : technique, coordination, créativité, chorégraphie et cohésion d'équipe.",
+      "courseCode": "FSB-WS",
+      "inLanguage": "fr-FR",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Entreprises, écoles, clubs sportifs"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Paris & Île-de-France"
+      },
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://kavifreestylebasket.fr/#org",
+        "name": "Kavi Freestyle Basket",
+        "url": "https://kavifreestylebasket.fr/"
+      },
+      "url": "https://kavifreestylebasket.fr/workshop.html",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://kavifreestylebasket.fr/contact.html",
+        "priceCurrency": "EUR",
+        "price": "0",
+        "availability": "https://schema.org/InStock",
+        "eligibleRegion": { "@type": "AdministrativeArea", "name": "France" },
+        "validFrom": "2025-01-01T00:00:00+01:00"
+      },
+      "hasCourseInstance": [{
+        "@type": "CourseInstance",
+        "name": "Session entreprise sur devis",
+        "courseMode": "OnSite",
+        "startDate": "2025-09-01",
+        "endDate": "2026-08-31",
+        "location": {
+          "@type": "Place",
+          "name": "Sur site (France)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Île-de-France",
+            "addressCountry": "FR"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://kavifreestylebasket.fr/contact.html",
+          "priceCurrency": "EUR",
+          "price": "0",
+          "availability": "https://schema.org/PreOrder",
+          "validFrom": "2025-08-01T00:00:00+02:00"
+        }
+      }]
+    }
+    </script>
+    
+    
 </head>
 
 <body>
