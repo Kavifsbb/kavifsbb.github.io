@@ -32,7 +32,10 @@
         content="Shows, animations et démonstrations de freestyle basket à Paris et en Île-de-France.">
     <meta name="twitter:image" content="https://kavifreestylebasket.fr/assets/images/opengraph/kavi.png">
 
-    <!-- Feuilles de style -->
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="fr-FR" href="https://kavifreestylebasket.fr/shows.html" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/shows.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,32 +45,65 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-    <!-- Plyr CSS -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="fr-FR" href="https://kavifreestylebasket.fr/shows.html" />
+    <!-- JSON-LD: WebPage -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Shows de Freestyle Basket | Kavi Freestyle Basket",
+    "url": "https://kavifreestylebasket.fr/shows.html",
+    "inLanguage": "fr-FR",
+    "description": "Shows et animations de freestyle basket en France avec Kavi Freestyle Basket : performances pour événements sportifs, culturels et d'entreprise à Paris et en Île-de-France.",
+    "isPartOf": {"@type":"WebSite","name":"Kavi Freestyle Basket","url":"https://kavifreestylebasket.fr/"}
+  }
+  </script>
+    <!-- JSON-LD: Fil d’Ariane -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Accueil","item":"https://kavifreestylebasket.fr/"},
+      {"@type":"ListItem","position":2,"name":"Shows de Freestyle Basket","item":"https://kavifreestylebasket.fr/shows.html"}
+    ]
+  }
+  </script>
+    <!-- JSON-LD: Offre d'événements (générique) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Spectacles de Freestyle Basket - Kavi Freestyle Basket",
+    "description": "Shows et animations de freestyle basket pour événements, entreprises, festivals et compétitions sportives. Performances par Kavi Freestyle Basket, membre de Vagabond Crew.",
+    "image": [
+      "https://kavifreestylebasket.fr/assets/images/presentation/P1099647.jpg",
+      "https://kavifreestylebasket.fr/assets/images/presentation/Screenshot_20240610_215629_Video-Player.jpg"
+    ],
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {"@type":"Place","name":"France et International","address":{"@type":"PostalAddress","addressCountry":"FR"}},
+    "performer": {"@type":"Person","name":"Kavi Freestyle Basket","url":"https://kavifreestylebasket.fr/"},
+    "offers": {"@type":"Offer","url":"https://kavifreestylebasket.fr/contact.html","price":"Sur devis","priceCurrency":"EUR","availability":"https://schema.org/InStock","validFrom":"2025-01-01T12:00"},
+    "organizer": {"@type":"Organization","name":"Kavi Freestyle Basket","url":"https://kavifreestylebasket.fr/"}
+  }
+  </script>
 </head>
-
 
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html" class="logo">KAVI</a>
-        <button class="hamburger" aria-label="Ouvrir le menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="shows.html">Shows</a></li>
+            <li><a href="shows.html" aria-current="page">Shows</a></li>
             <li><a href="projets.html">Projets</a></li>
             <li><a href="academie.html">Académie</a></li>
             <li><a href="divers.html">Divers</a></li>
@@ -77,167 +113,133 @@
 
     <main class="shows-page">
         <header class="shows-header" data-aos="fade-up">
-            <h1 class="shows-title">Shows de Freestyle Basket | Kavi Freestyle Basket</h1>
-            <p class="shows-subtitle">
-                Un show de freestyle basket est une performance artistique et sportive mettant en scène des spécialistes
-                du maniement du ballon. Accompagné de musique rythmée et d'effets visuels, le show peut inclure des
-                interactions avec le public, renforçant son caractère immersif et dynamique. Il est présenté lors
-                d'événements sportifs, culturels, commerciaux ou d'entreprise, et mêle divertissement et démonstration
-                de haut niveau.
-            </p>
-
+            <h1 class="shows-title">Shows & Performances</h1>
+            <p class="shows-subtitle">Un show de freestyle basket est une performance artistique et sportive mettant en
+                scène des spécialistes du maniement du ballon. Accompagné de musique rythmée et d'effets visuels, le
+                show peut inclure des interactions avec le public. Idéal pour événements sportifs, culturels,
+                commerciaux ou d'entreprise.</p>
+            <p><a class="btn-modern" href="contact.html">Demander un devis</a></p>
         </header>
 
         <!-- Section Vidéos -->
         <section class="video-section-container">
             <div class="video-section-header">
                 <h2 class="video-section-title">Vidéos de shows de freestyle basket</h2>
-                <p class="video-section-subtitle">Découvrez mes performances en situation réelle</p>
+                <p class="video-section-subtitle">Découvrez mes performances en mouvement</p>
             </div>
 
             <div class="owl-carousel video-section">
-                <!-- Toutes les vidéos sans classes spécifiques - détection automatique -->
+                <!-- Gardé tel quel pour ne rien casser -->
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/lv_0_20250616170744.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
-
-                <!-- Vidéos horizontales standard -->
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show 1ere scène Internationale.mp4" type="video/mp4"
                                 size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Adidas Arena.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Bercy Accor Arena.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Black Dunk.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show ESSEC & Ministre des Sports 2023.mp4" type="video/mp4"
                                 size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Noa_Dorian.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Quai54 Roland-Garros.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
-                <!-- Vidéo portrait croppée -->
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Tony Parker.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show UNSS.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
                 <div class="item">
-                    <div>
-                        <video class="js-player" crossorigin playsinline preload="none">
+                    <div><video class="js-player" crossorigin playsinline preload="none">
                             <source src="assets/videos/Shows/Show Vendée.mp4" type="video/mp4" size="720">
-                        </video>
-                    </div>
+                        </video></div>
                 </div>
             </div>
         </section>
 
+        <!-- Galerie -->
         <section class="gallery-section">
             <div class="gallery-container">
                 <header class="gallery-header">
                     <div>
                         <h2 class="gallery-title">Galerie freestyle basket</h2>
-                        <p class="gallery-subtitle">Une sélection de mes meilleurs moments sur scène</p>
+                        <p class="gallery-subtitle">Une sélection de mes meilleurs moments</p>
                     </div>
                 </header>
 
                 <div class="gallery-grid">
-                    <article class="gallery-item" data-aos="fade-up">
-                        <img src="assets/images/shows/Tony-Parker-Kavi-1.webp"
-                            alt="Kavi freestyle basket spectacle Accor Arena Paris" loading="lazy">
+                    <article class="gallery-item" data-aos="fade-up"><img
+                            src="assets/images/shows/Tony-Parker-Kavi-1.webp"
+                            alt="Kavi freestyle basket spectacle Accor Arena Paris" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img
+                            src="assets/images/shows/Tony-Parker-Kavi-3.webp"
+                            alt="Performance freestyle basket Roland Garros Quai54" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img
+                            src="assets/images/shows/Snapchat-119756544.webp"
+                            alt="Show freestyle basket Adidas Arena Paris Basketball" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up"><img
+                            src="assets/images/shows/Screenshot_20240610_215629_Video-Player.webp"
+                            alt="Spectacle freestyle basket La Félicità restaurant Europe" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img
+                            src="assets/images/shows/P1088692.webp" alt="Show 5" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img
+                            src="assets/images/shows/P1088516.webp" alt="Show 6" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up"><img
+                            src="assets/images/shows/JBL-Store_R5_9739.webp" alt="Show 7" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img
+                            src="assets/images/shows/JBL-Store_R5_9696.webp" alt="Show 8" loading="lazy"></article>
+                    <article class="gallery-item" data-aos="fade-up"><img
+                            src="assets/images/shows/20231202-0339-copie-2000x1333.webp" alt="Show 9" loading="lazy">
                     </article>
-                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/images/shows/Tony-Parker-Kavi-3.webp"
-                            alt="Performance freestyle basket Roland Garros Quai54" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/images/shows/Snapchat-119756544.webp"
-                            alt="Show freestyle basket Adidas Arena Paris Basketball" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up">
-                        <img src="assets/images/shows/Screenshot_20240610_215629_Video-Player.webp"
-                            alt="Spectacle freestyle basket La Félicità restaurant Europe" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/images/shows/P1088692.webp" alt="Show 5" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="assets/images/shows/P1088516.webp" alt="Show 6" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up">
-                        <img src="assets/images/shows/JBL-Store_R5_9739.webp" alt="Show 7" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/images/shows/JBL-Store_R5_9696.webp" alt="Show 8" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up">
-                        <img src="assets/images/shows/20231202-0339-copie-2000x1333.webp" alt="Show 9" loading="lazy">
-                    </article>
-                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024-22_52_15.webp"
-                            alt="Show 10" loading="lazy">
-                    </article>
+                    <article class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img
+                            src="assets/images/shows/1000041521_7db5131487d0e8138a01f223ee563c5b-04_05_2024-22_52_15.webp"
+                            alt="Show 10" loading="lazy"></article>
                 </div>
             </div>
         </section>
 
-
-
+        <!-- CTA -->
         <section class="shows-cta" data-aos="fade-up">
             <h2 class="cta-title">Créons ensemble votre événement</h2>
-            <p class="cta-text">Chaque show est unique et personnalisé selon vos besoins. Contactez-moi pour discuter de
+            <p class="cta-text">Chaque show est unique et personnalisé selon vos besoins. Contactez‑moi pour discuter de
                 votre projet et créer une expérience mémorable.</p>
-            <a href="contact.html" class="btn-modern">Discuter de votre projet</a>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn-modern">Discuter de votre projet</a>
+                <a href="workshop.html" class="btn-secondary">Voir les ateliers</a>
+            </div>
         </section>
     </main>
 
@@ -281,264 +283,61 @@
         </div>
     </footer>
 
-    <!-- jQuery (requis en premier) -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <!-- Plyr JS -->
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-
-    <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <script>
         // Navigation mobile
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
             });
-        });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('open'));
+            });
+        }
 
-        // AOS initialization
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true
-        });
+        // AOS
+        AOS.init({ duration: 800, offset: 100, once: true });
 
-        // Attendre que jQuery soit chargé
+        // Ajustement vidéos selon ratio
         $(document).ready(function () {
-            // Fonction pour détecter et ajuster les dimensions vidéo
             function adjustVideoContainers() {
                 $('.js-player').each(function (index) {
                     const video = this;
                     const $item = $(video).closest('.item');
                     const $container = $(video).closest('.item > div');
-
-                    // Écouter quand les métadonnées de la vidéo sont chargées
                     video.addEventListener('loadedmetadata', function () {
-                        const videoWidth = video.videoWidth;
-                        const videoHeight = video.videoHeight;
-                        const aspectRatio = videoWidth / videoHeight;
-
-                        console.log(`Vidéo ${index}: ${videoWidth}x${videoHeight}, ratio: ${aspectRatio.toFixed(2)}`);
-
-                        // Supprimer les classes existantes
+                        const r = video.videoWidth / video.videoHeight;
                         $item.removeClass('reel cropped-portrait auto-portrait auto-landscape auto-square');
-
-                        if (aspectRatio < 0.7) {
-                            // Vidéo très verticale (format reel)
-                            $item.addClass('auto-portrait');
-                            $container.css({
-                                'aspect-ratio': '9/16',
-                                'max-width': '350px',
-                                'min-height': '500px'
-                            });
-                        } else if (aspectRatio < 1.2) {
-                            // Vidéo portrait ou presque carrée
-                            $item.addClass('auto-portrait');
-                            $container.css({
-                                'aspect-ratio': `${Math.max(aspectRatio, 0.6)}/1`,
-                                'max-width': '400px',
-                                'min-height': '450px'
-                            });
-                        } else if (aspectRatio < 1.5) {
-                            // Vidéo légèrement horizontale
-                            $item.addClass('auto-square');
-                            $container.css({
-                                'aspect-ratio': `${aspectRatio}/1`,
-                                'max-width': '500px',
-                                'min-height': '350px'
-                            });
-                        } else {
-                            // Vidéo horizontale standard
-                            $item.addClass('auto-landscape');
-                            $container.css({
-                                'aspect-ratio': '16/9',
-                                'max-width': '100%',
-                                'min-height': '400px'
-                            });
-                        }
+                        if (r < 0.7) { $item.addClass('auto-portrait'); $container.css({ 'aspect-ratio': '9/16', 'max-width': '350px', 'min-height': '500px' }); }
+                        else if (r < 1.2) { $item.addClass('auto-portrait'); $container.css({ 'aspect-ratio': `${Math.max(r, 0.6)}/1`, 'max-width': '400px', 'min-height': '450px' }); }
+                        else if (r < 1.5) { $item.addClass('auto-square'); $container.css({ 'aspect-ratio': `${r}/1`, 'max-width': '500px', 'min-height': '350px' }); }
+                        else { $item.addClass('auto-landscape'); $container.css({ 'aspect-ratio': '16/9', 'max-width': '100%', 'min-height': '400px' }); }
                     });
-
-                    // Forcer le chargement des métadonnées si pas encore fait
-                    if (video.readyState >= 1) {
-                        video.dispatchEvent(new Event('loadedmetadata'));
-                    } else {
-                        video.load();
-                    }
+                    if (video.readyState >= 1) video.dispatchEvent(new Event('loadedmetadata')); else video.load();
                 });
             }
 
-            // Configuration Owl Carousel
+            // Owl Carousel
             $('.owl-carousel').owlCarousel({
-                stagePadding: 200,
-                loop: true,
-                margin: 10,
-                items: 1,
-                nav: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        stagePadding: 60
-                    },
-                    600: {
-                        items: 1,
-                        stagePadding: 100
-                    },
-                    1000: {
-                        items: 1,
-                        stagePadding: 200
-                    },
-                    1200: {
-                        items: 1,
-                        stagePadding: 250
-                    },
-                    1400: {
-                        items: 1,
-                        stagePadding: 300
-                    },
-                    1600: {
-                        items: 1,
-                        stagePadding: 350
-                    },
-                    1800: {
-                        items: 1,
-                        stagePadding: 400
-                    }
-                },
-                onInitialized: function () {
-                    // Ajuster les conteneurs après l'initialisation du carousel
-                    setTimeout(adjustVideoContainers, 500);
-                }
+                stagePadding: 200, loop: true, margin: 10, items: 1, nav: true,
+                responsive: { 0: { items: 1, stagePadding: 60 }, 600: { items: 1, stagePadding: 100 }, 1000: { items: 1, stagePadding: 200 }, 1200: { items: 1, stagePadding: 250 }, 1400: { items: 1, stagePadding: 300 }, 1600: { items: 1, stagePadding: 350 }, 1800: { items: 1, stagePadding: 400 } },
+                onInitialized: function () { setTimeout(adjustVideoContainers, 500); }
             });
 
-            // Configuration Plyr
-            var playerSettings = {
-                controls: ['play-large'],
-                fullscreen: { enabled: false },
-                resetOnEnd: true,
-                hideControls: true,
-                clickToPlay: true,
-                keyboard: false,
-            };
-
-            const players = Plyr.setup('.js-player', playerSettings);
-
-            // Ajuster les conteneurs après l'initialisation de Plyr
+            // Plyr
+            const players = Plyr.setup('.js-player', { controls: ['play-large'], fullscreen: { enabled: false }, resetOnEnd: true, hideControls: true, clickToPlay: true, keyboard: false });
             setTimeout(adjustVideoContainers, 1000);
-
-            // Gestion des vidéos
-            players.forEach(function (instance, index) {
-                instance.on('play', function () {
-                    players.forEach(function (instance1, index1) {
-                        if (instance != instance1) {
-                            instance1.pause();
-                        }
-                    });
-                });
-            });
-
-            // Pause des vidéos lors du changement de slide
-            $('.video-section').on('translated.owl.carousel', function (event) {
-                players.forEach(function (instance, index1) {
-                    instance.pause();
-                });
-            });
+            players.forEach(function (instance) { instance.on('play', function () { players.forEach(p => { if (p !== instance) p.pause(); }); }); });
+            $('.video-section').on('translated.owl.carousel', function () { players.forEach(p => p.pause()); });
         });
     </script>
-    <!-- WebPage (cette page Shows) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Shows de Freestyle Basket | Kavi Freestyle Basket",
-      "url": "https://kavifreestylebasket.fr/shows.html",
-      "inLanguage": "fr-FR",
-      "description": "Shows et animations de freestyle basket en France avec Kavi Freestyle Basket : performances pour événements sportifs, culturels et d'entreprise à Paris et en Île-de-France.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Kavi Freestyle Basket",
-        "url": "https://kavifreestylebasket.fr/"
-      }
-    }
-    </script>
-
-    <!-- Fil d’Ariane -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accueil",
-          "item": "https://kavifreestylebasket.fr/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Shows de Freestyle Basket",
-          "item": "https://kavifreestylebasket.fr/shows.html"
-        }
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Event",
-          "name": "Spectacles de Freestyle Basket - Kavi Freestyle Basket",
-          "description": "Shows et animations de freestyle basket pour événements, entreprises, festivals et compétitions sportives. Performances uniques par Kavi Freestyle Basket, membre de Vagabond Crew.",
-          "image": [
-            "https://kavifreestylebasket.fr/assets/images/presentation/P1099647.jpg",
-            "https://kavifreestylebasket.fr/assets/images/presentation/Screenshot_20240610_215629_Video Player.jpg"
-          ],
-          "startDate": "2025-01-01",
-          "endDate": "2025-12-31",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "location": {
-            "@type": "Place",
-            "name": "France et International",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "FR"
-            }
-          },
-          "performer": {
-            "@type": "Person",
-            "name": "Kavi Freestyle Basket",
-            "url": "https://kavifreestylebasket.fr/"
-          },
-          "offers": {
-            "@type": "Offer",
-            "url": "https://kavifreestylebasket.fr/contact.html",
-            "price": "Sur devis",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "validFrom": "2025-01-01T12:00"
-          },
-          "organizer": {
-            "@type": "Organization",
-            "name": "Kavi Freestyle Basket",
-            "url": "https://kavifreestylebasket.fr/"
-          }
-        }
-        </script>
-        
-
 </body>
 
 </html>
