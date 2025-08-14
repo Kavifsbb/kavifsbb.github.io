@@ -91,8 +91,8 @@
         <!-- Section Vidéos -->
         <section class="video-section-container">
             <div class="video-section-header">
-                <h2 class="video-section-title">Vidéos</h2>
-                <p class="video-section-subtitle">Découvrez mes performances en mouvement</p>
+                <h2 class="video-section-title">Vidéos de shows de freestyle basket</h2>
+                <p class="video-section-subtitle">Découvrez mes performances en situation réelle</p>
             </div>
 
             <div class="owl-carousel video-section">
@@ -186,8 +186,8 @@
             <div class="gallery-container">
                 <header class="gallery-header">
                     <div>
-                        <h2 class="gallery-title">Galerie</h2>
-                        <p class="gallery-subtitle">Une sélection de mes meilleurs moments</p>
+                        <h2 class="gallery-title">Galerie freestyle basket</h2>
+                        <p class="gallery-subtitle">Une sélection de mes meilleurs moments sur scène</p>
                     </div>
                 </header>
 
@@ -495,64 +495,49 @@
     }
     </script>
 
-    <!-- Person (remplace ton bloc existant OU n’ajoute pas celui-ci si tu gardes l’ancien) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Kavi Thiagarajah",
-      "alternateName": "Kavi Freestyle Basket",
-      "jobTitle": "Freestyler professionnel",
-      "description": "Kavi Freestyle Basket propose des shows et animations de freestyle basket en France, à Paris et en Île-de-France.",
-      "url": "https://kavifreestylebasket.fr/",
-      "image": "https://kavifreestylebasket.fr/assets/images/opengraph/kavi.png",
-      "sameAs": [
-        "https://instagram.com/kavi_fsbb",
-        "https://facebook.com/kavi_fsbb",
-        "https://youtube.com/@kavi_fsbb",
-        "https://linkedin.com/in/kavi-thiagarajah"
-      ],
-      "knowsAbout": [
-        "Freestyle basket",
-        "Shows et animations de freestyle basket",
-        "Événementiel sportif"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Île-de-France",
-        "addressCountry": "FR"
-      },
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Vagabond Crew International"
-      }
-    }
-    </script>
-
-    <!-- VideoObject (exemple : duplique le bloc pour 2–3 vidéos clés maximum) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "Show de freestyle basket - Accor Arena",
-      "description": "Performance de freestyle basket par Kavi lors d'un événement à l'Accor Arena.",
-      "thumbnailUrl": [
-        "https://kavifreestylebasket.fr/assets/images/shows/Snapchat-119756544.webp"
-      ],
-      "uploadDate": "2025-06-16",
-      "contentUrl": "https://kavifreestylebasket.fr/assets/videos/Shows/Show%20Bercy%20Accor%20Arena.mp4",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Kavi Freestyle Basket",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://kavifreestylebasket.fr/assets/images/opengraph/kavi.png",
-          "width": 1200,
-          "height": 630
+        {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "Spectacles de Freestyle Basket - Kavi Freestyle Basket",
+          "description": "Shows et animations de freestyle basket pour événements, entreprises, festivals et compétitions sportives. Performances uniques par Kavi Freestyle Basket, membre de Vagabond Crew.",
+          "image": [
+            "https://kavifreestylebasket.fr/assets/images/presentation/P1099647.jpg",
+            "https://kavifreestylebasket.fr/assets/images/presentation/Screenshot_20240610_215629_Video Player.jpg"
+          ],
+          "startDate": "2025-01-01",
+          "endDate": "2025-12-31",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "France et International",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "FR"
+            }
+          },
+          "performer": {
+            "@type": "Person",
+            "name": "Kavi Freestyle Basket",
+            "url": "https://kavifreestylebasket.fr/"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://kavifreestylebasket.fr/contact.html",
+            "price": "Sur devis",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-01-01T12:00"
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "Kavi Freestyle Basket",
+            "url": "https://kavifreestylebasket.fr/"
+          }
         }
-      }
-    }
-    </script>
+        </script>
+        
 
 </body>
 
