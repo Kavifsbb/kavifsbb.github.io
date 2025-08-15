@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO principal -->
+    <title>Liens & Bio | Kavi Freestyle Basket - Podcasts, Photos, Réseaux Sociaux | Paris</title>
+    <meta name="description"
+        content="Découvrez tous les liens de Kavi Freestyle Basket : podcasts, photos, vidéos, réseaux sociaux et contenus exclusifs. Freestyler professionnel basé à Paris." />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://kavifreestylebasket.fr/liens.html" />
+    <link rel="alternate" hreflang="fr-FR" href="https://kavifreestylebasket.fr/liens.html" />
+
+    <!-- Keywords optimisés -->
+    <meta name="keywords"
+        content="Kavi freestyle basket bio, liens Kavi freestyler, podcasts freestyle basket, photos Kavi, réseaux sociaux freestyle, contenu Kavi Paris, freestyler professionnel liens" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://kavifreestylebasket.fr/liens.html" />
+    <meta property="og:title" content="Liens & Bio | Kavi Freestyle Basket - Tous mes contenus" />
+    <meta property="og:description"
+        content="Accédez à tous mes contenus : podcasts, photos, vidéos et réseaux sociaux. Freestyler professionnel à Paris." />
+    <meta property="og:image" content="https://kavifreestylebasket.fr/assets/images/opengraph/kavi-bio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Kavi Freestyle Basket" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://kavifreestylebasket.fr/liens.html" />
+    <meta name="twitter:title" content="Liens & Bio | Kavi Freestyle Basket - Tous mes contenus" />
+    <meta name="twitter:description"
+        content="Découvrez tous mes liens : podcasts, photos, vidéos et réseaux sociaux. Freestyler professionnel à Paris." />
+    <meta name="twitter:image" content="https://kavifreestylebasket.fr/assets/images/opengraph/kavi-bio.png" />
+    <meta name="twitter:creator" content="@kavi_fsbb" />
+
+    <!-- Styles & libs -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Space+Mono&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        .bio-page {
+            background: var(--background-color);
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .bio-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .bio-header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            font-family: var(--font-display);
+            margin-bottom: .7rem;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bio-header p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+
+        .bio-intro {
+            background: var(--gray-900);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .15);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(41, 121, 255, 0.1);
+        }
+
+        .bio-intro h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .bio-intro p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-preview {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-preview-link {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--black);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: .3s;
+            text-decoration: none;
+        }
+
+        .social-preview-link:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(41, 121, 255, .3);
+        }
+
+        .bio-iframe-container {
+            background: var(--gray-900);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .15);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(41, 121, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .bio-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .content-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .category-card {
+            background: var(--gray-900);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(41, 121, 255, 0.1);
+            transition: .3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(41, 121, 255, .15);
+        }
+
+        .category-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+            font-family: var(--font-display);
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            font-size: .95rem;
+        }
+
+        @media (max-width: 768px) {
+            .bio-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .bio-intro {
+                padding: 1.5rem;
+            }
+            
+            .bio-iframe {
+                height: 500px;
+            }
+            
+            .content-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">KAVI</a>
+        <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="academie.html">Académie</a></li>
+            <li><a href="divers.html">Divers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <script>
+        // Menu mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+            document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+        }
+    </script>
+
+    <main class="bio-page">
+        <div class="container">
+            <div class="bio-header" data-aos="fade-up">
+                <h1>Tous mes liens & contenus</h1>
+                <p>Découvrez l'univers complet de Kavi Freestyle Basket : podcasts exclusifs, photos de performances, vidéos techniques, et bien plus encore.</p>
+            </div>
+
+            <div>
+                <!-- Introduction -->
+                <div class="bio-intro" data-aos="fade-up">
+                    <h2><i class="fas fa-link" aria-hidden="true"></i> Retrouvez-moi partout</h2>
+                    <p>Plongez dans mon univers freestyle ! Accédez à tous mes contenus : interviews podcasts, coulisses de mes performances, tutoriels techniques, et mes dernières collaborations. Un seul endroit pour tout découvrir.</p>
+                    
+                    <div class="social-preview">
+                        <a href="https://instagram.com/kavi_fsbb" target="_blank" rel="noopener" class="social-preview-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@kavi_fsb" target="_blank" rel="noopener" class="social-preview-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket" target="_blank" rel="noopener" class="social-preview-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Types de contenus -->
+                <div class="content-categories" data-aos="fade-up">
+                    <div class="category-card">
+                        <i class="fas fa-microphone-alt"></i>
+                        <h3>Podcasts</h3>
+                        <p>Interviews, discussions sur le freestyle et le sport</p>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-camera"></i>
+                        <h3>Photos</h3>
+                        <p>Coulisses, performances et moments uniques</p>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-video"></i>
+                        <h3>Vidéos</h3>
+                        <p>Tutoriels, shows et contenus exclusifs</p>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Collaborations</h3>
+                        <p>Projets avec des marques et partenaires</p>
+                    </div>
+                </div>
+
+                <!-- Iframe Bio.site -->
+                <div class="bio-iframe-container" data-aos="fade-up">
+                    <iframe 
+                        src="https://bio.site/kavi_fsbb" 
+                        class="bio-iframe"
+                        title="Liens et bio de Kavi Freestyle Basket - Podcasts, Photos et Réseaux Sociaux"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">KAVI</a>
+                    <p>L'excellence du Freestyle Basket</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/kavi_fsbb" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@kavi_fsb" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="shows.html">Shows</a></li>
+                            <li><a href="projets.html">Projets</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:kavi.fsbball@outlook.com">kavi.fsbball@outlook.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kavi Freestyle. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, offset: 100, once: true });</script>
+
+    <!-- JSON-LD ProfilePage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Liens et Bio - Kavi Freestyle Basket",
+        "url": "https://kavifreestylebasket.fr/liens.html",
+        "inLanguage": "fr-FR",
+        "about": {
+            "@type": "Person",
+            "@id": "https://kavifreestylebasket.fr/#kavi",
+            "name": "Kavi Thiagarajah",
+            "alternateName": "Kavi Freestyle Basket",
+            "description": "Freestyler professionnel, créateur de contenu et formateur en freestyle basket",
+            "url": "https://kavifreestylebasket.fr",
+            "sameAs": [
+                "https://instagram.com/kavi_fsbb",
+                "https://youtube.com/@kavi_fsb",
+                "https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket",
+                "https://bio.site/kavi_fsbb"
+            ]
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": 4,
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "WebPage",
+                        "name": "Podcasts Freestyle Basket",
+                        "description": "Interviews et discussions sur le freestyle basket"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "WebPage",
+                        "name": "Photos et Performances",
+                        "description": "Galerie photos des performances et coulisses"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "WebPage",
+                        "name": "Vidéos et Tutoriels",
+                        "description": "Contenus vidéo éducatifs et divertissants"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                        "@type": "WebPage",
+                        "name": "Collaborations",
+                        "description": "Projets avec marques et partenaires"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Person enrichi -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://kavifreestylebasket.fr/#kavi",
+        "name": "Kavi Thiagarajah",
+        "alternateName": ["Kavi Freestyle Basket", "Kavi FSBB"],
+        "jobTitle": "Freestyler Professionnel",
+        "description": "Freestyler professionnel basé à Paris. Spécialisé dans les shows, animations, ateliers et formation en freestyle basket. Créateur de contenu et intervenant dans les médias.",
+        "url": "https://kavifreestylebasket.fr",
+        "image": "https://kavifreestylebasket.fr/assets/images/opengraph/kavi.png",
+        "sameAs": [
+            "https://instagram.com/kavi_fsbb",
+            "https://youtube.com/@kavi_fsb",
+            "https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket",
+            "https://bio.site/kavi_fsbb"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Vagabond Crew International"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Île-de-France",
+            "addressCountry": "FR"
+        },
+        "knowsAbout": [
+            "Freestyle Basketball",
+            "Animation sportive",
+            "Formation basketball",
+            "Spectacle sportif",
+            "Création de contenu"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Freestyler Professionnel",
+            "occupationLocation": {
+                "@type": "City",
+                "name": "Paris"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kavi Freestyle Basket",
+        "url": "https://kavifreestylebasket.fr/",
+        "logo": "https://kavifreestylebasket.fr/assets/images/opengraph/kavi.png",
+        "description": "Shows, animations et formations en freestyle basket. Interventions en Île-de-France et partout en France.",
+        "sameAs": [
+            "https://instagram.com/kavi_fsbb",
+            "https://youtube.com/@kavi_fsb",
+            "https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket",
+            "https://bio.site/kavi_fsbb"
+        ],
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "Devis / Booking",
+                "email": "kavi.fsbball@outlook.com",
+                "telephone": "+33600000000",
+                "areaServed": "FR",
+                "availableLanguage": ["fr", "en"]
+            }
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Kavi Thiagarajah"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Île-de-France",
+            "addressCountry": "FR"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://kavifreestylebasket.fr/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Liens et Bio",
+                "item": "https://kavifreestylebasket.fr/liens.html"
+            }
+        ]
+    }
+    </script>
+</body>
+
+</html>
