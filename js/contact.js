@@ -1,7 +1,7 @@
 // js/contact.js
 
 const EMAILJS_PUBLIC_KEY  = "f2bHTzVcIjhbkf8U3";
-const EMAILJS_SERVICE_ID  = "service_90ix7cs";
+const EMAILJS_SERVICE_ID  = "service_pggsaaf";
 const EMAILJS_TEMPLATE_ID = "template_qqs5ict";
 
 const CONTACT_RECIPIENT_PROD = "kavi.fsbball@outlook.com";
