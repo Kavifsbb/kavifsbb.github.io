@@ -388,3 +388,41 @@
         min-height: 240px;
     }
 }
+
+/* === Badges de description au survol des vidéos === */
+.video-card {
+  position: relative;
+}
+
+.video-caption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none; /* ne bloque pas le clic play */
+}
+
+.video-card:hover .video-caption,
+.video-card:focus-within .video-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optionnel : toujours visible sur écrans tactiles sans hover */
+@media (hover: none) and (pointer: coarse) {
+  .video-caption { opacity: 1; transform: none; }
+}
