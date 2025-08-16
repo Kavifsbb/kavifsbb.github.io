@@ -730,7 +730,12 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
     margin-bottom: 2rem;
 }
-
+.footer-ilan{
+  font-weight: bold;
+}
+.footer-ilan:hover{
+  color: white;
+}
 .footer-brand {
     flex: 1;
 }
