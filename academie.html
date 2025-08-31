@@ -260,6 +260,50 @@
 
             </div>
         </section>
+        <!-- HUB & RÉSEAUX – BioSite intégré -->
+        <section class="section-content biosite-hub" id="hub">
+            <header class="biosite-head" data-aos="fade-up">
+                <h2 class="section-title">Hub & réseaux — Académie Vagabond</h2>
+                <p class="biosite-sub">Tous les liens officiels, actus et reels gérés directement par l’académie.</p>
+            </header>
+
+            <article class="biosite-card" data-aos="zoom-in">
+                <div class="biosite-glow" aria-hidden="true"></div>
+
+                <!-- Wrapper avec hauteur contrôlée (collapsée par défaut) -->
+                <div class="biosite-frame-wrap is-collapsed" data-state="collapsed">
+                    <iframe class="biosite-iframe" title="Académie Vagabond – BioSite"
+                        src="https://bio.site/Academievagabond" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                        allow="clipboard-write *; autoplay *" allowfullscreen></iframe>
+
+                    <!-- Masque gradient quand c’est réduit -->
+                    <div class="biosite-fade" aria-hidden="true"></div>
+                </div>
+
+                <!-- Actions -->
+                <div class="biosite-actions">
+                    <button class="biosite-toggle" type="button" aria-expanded="false" aria-controls="hub">
+                        Voir plus <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <a class="biosite-open" href="https://bio.site/Academievagabond" target="_blank" rel="noopener">
+                        Ouvrir dans un nouvel onglet <i class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <!-- Fallback SEO/no-JS (discret) -->
+                <noscript>
+                    <p class="biosite-fallback">
+                        Votre navigateur a désactivé JavaScript. Accédez au hub :
+                        <a href="https://bio.site/Academievagabond" target="_blank"
+                            rel="noopener">bio.site/Academievagabond</a>.
+                    </p>
+                </noscript>
+            </article>
+        </section>
+
 
         <!-- Footer -->
         <footer class="footer">
@@ -310,6 +354,33 @@
         <script>
             AOS.init({ duration: 1000, once: true });
         </script>
+        <script>
+            // Toggle déployer/réduire pour l’iframe BioSite
+            document.addEventListener('DOMContentLoaded', () => {
+                const wrap = document.querySelector('.biosite-frame-wrap');
+                const toggle = document.querySelector('.biosite-toggle');
+                if (!wrap || !toggle) return;
+
+                const setState = (expanded) => {
+                    wrap.classList.toggle('is-collapsed', !expanded);
+                    toggle.setAttribute('aria-expanded', String(expanded));
+                    toggle.innerHTML = expanded
+                        ? 'Réduire <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>'
+                        : 'Voir plus <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+                    // Optionnel: remesurer AOS si besoin
+                    if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
+                };
+
+                // état initial: réduit
+                setState(false);
+
+                toggle.addEventListener('click', () => {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    setState(!expanded);
+                });
+            });
+        </script>
+
         <script src="js/academie.js" defer></script>
 
         <script src="js/main.js"></script>
