@@ -1,5 +1,5 @@
 // Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.setAttribute('aria-controls', 'navLinks');
         navLinks.setAttribute('id', 'navLinks');
 
-        mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.addEventListener('click', function () {
             const isOpen = navLinks.classList.toggle('active');
             mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             mobileMenuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
@@ -142,4 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
+
+    
 });
+
+
