@@ -1234,28 +1234,156 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-@media (max-width: 800px) {
-  .navbar .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: var(--background-color);
-    flex-direction: column;
-    gap: 0;
-    width: 180px;
-    padding: 1rem 0;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.14);
-    display: none;
-    z-index: 999;
+/* ===== NAVBAR — MOBILE & TABLET (2025) ===== */
+@media (max-width: 1024px) {
+  /* Conteneur */
+  .navbar {
+    height: 64px;
+    padding: 0 1rem;
+    background: rgba(10,10,11,0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .navbar .nav-links.open {
-    display: flex;
+
+  /* Logo un peu plus lisible */
+  .navbar .logo {
+    font-size: 2.1rem;
+    letter-spacing: 2px;
   }
+
+  /* Hamburger : zone cliquable + anim en X via aria-expanded */
   .hamburger {
     display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 8px;          /* zone de touch confortable */
+    border-radius: 10px;
+    background: transparent;
+    transition: background .2s ease;
+  }
+  .hamburger:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+  .hamburger:hover {
+    background: rgba(255,255,255,0.06);
+  }
+  .hamburger span {
+    height: 2px;
+    width: 26px;
+    background: var(--text-color);
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: transform .35s ease, opacity .2s ease, width .2s ease;
+    transform-origin: center;
+  }
+  /* État "ouvert" = croix */
+  .hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    width: 26px;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+    width: 26px;
+  }
+
+  /* Panneau latéral (slide-in) */
+  .navbar .nav-links {
+    position: fixed;
+    top: 64px;              /* sous la barre */
+    right: 0;
+    bottom: 0;
+    width: min(86vw, 380px);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0.75rem;
+    background:
+      linear-gradient(180deg, rgba(18,18,20,0.96) 0%, rgba(10,10,11,0.96) 100%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-left: 1px solid rgba(255,255,255,0.08);
+    box-shadow: -24px 0 60px rgba(0,0,0,0.45);
+    transform: translateX(100%);
+    transition: transform .45s cubic-bezier(.16,1,.3,1);
+    z-index: 1001;
+  }
+  .navbar .nav-links.open {
+    transform: translateX(0);
+  }
+
+  /* Liens : gros tap-targets */
+  .navbar .nav-links li {
+    list-style: none;
+    margin: 0;
+  }
+  .navbar .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 14px 14px;
+    border-radius: 12px;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: .2px;
+    color: var(--white);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: background .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .navbar .nav-links a + a,
+  .navbar .nav-links li + li a {
+    margin-top: .6rem;
+  }
+  .navbar .nav-links a:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateX(2px);
+  }
+  .navbar .nav-links a[aria-current="page"],
+  .navbar .nav-links a.active {
+    background: rgba(41,121,255,0.16);
+    border-color: rgba(41,121,255,0.35);
+  }
+
+  /* Petite zone "hint" en bas (facultatif visuel) */
+  .navbar .nav-links::after {
+    content: "Swipe → ou appuie sur le X pour fermer";
+    display: block;
+    margin-top: auto;
+    padding: .9rem .75rem .75rem;
+    font-size: .8rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Backdrop quand menu ouvert (support :has) */
+  .navbar:has(.nav-links.open)::after {
+    content: "";
+    position: fixed;
+    inset: 64px 0 0 0;   /* sous la barre */
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 1000;
   }
 }
+
+/* Tablette “mid” : un peu plus large et typo plus grande */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar .nav-links {
+    width: min(60vw, 420px);
+    padding: 1.25rem;
+  }
+  .navbar .nav-links a {
+    padding: 16px 16px;
+    font-size: 1.1rem;
+  }
+}
+
 
 /* --- HERO SECTION RESPONSIVE FIXES --- */
 @media (max-width: 900px) {
