@@ -1372,6 +1372,28 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Swipe-friendly */
+.navbar .nav-links{
+  touch-action: pan-y;         /* on laisse défiler en vertical, on capte le drag horizontal */
+  will-change: transform;
+}
+
+/* Backdrop si non présent */
+.nav-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);  /* ajuste l’opacité si tu veux */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 998;                 /* sous le drawer (999) mais au-dessus du reste */
+}
+.nav-backdrop.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 /* Tablette “mid” : un peu plus large et typo plus grande */
 @media (min-width: 768px) and (max-width: 1024px) {
   .navbar .nav-links {

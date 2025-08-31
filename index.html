@@ -510,26 +510,114 @@
     <script>
         // AOS init
         AOS.init({ duration: 800, offset: 100, once: true });
-
-        // Navigation mobile
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-                hamburger.setAttribute('aria-expanded', String(!expanded));
-                navLinks.classList.toggle('open');
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('open');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
     </script>
+
     <script src="js/main.js"></script>
 
+    <script>
+        (function () {
+            const drawer = document.querySelector('.navbar .nav-links');
+            const burger = document.querySelector('.hamburger');
+            if (!drawer) return;
+
+            // crée un backdrop si absent
+            let backdrop = document.querySelector('.nav-backdrop');
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.className = 'nav-backdrop';
+                document.body.appendChild(backdrop);
+            }
+
+            const open = () => {
+                drawer.classList.add('open');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            };
+            const close = () => {
+                drawer.classList.remove('open');
+                backdrop.classList.remove('show');
+                drawer.style.transform = '';
+                backdrop.style.opacity = '';
+                document.body.style.overflow = '';
+            };
+
+            // hooks existants
+            burger && burger.addEventListener('click', () => {
+                drawer.classList.contains('open') ? close() : open();
+            });
+            backdrop.addEventListener('click', close);
+            drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+            // ==== SWIPE-TO-CLOSE (droite -> gauche) ====
+            let startX = 0, startY = 0, dragging = false, moved = false, lastTx = 0, t0 = 0;
+
+            const start = (x, y) => {
+                if (!drawer.classList.contains('open')) return; // on ne gère QUE la fermeture
+                startX = x; startY = y; lastTx = 0; moved = false; dragging = true;
+                t0 = Date.now();
+                drawer.style.transition = 'none';
+                backdrop.style.transition = 'none';
+            };
+
+            const move = (x, y) => {
+                if (!dragging) return;
+                const dx = x - startX;
+                const dy = y - startY;
+
+                // si le geste est plus vertical qu'horizontal, on annule le drag
+                if (!moved && Math.abs(dy) > Math.abs(dx)) {
+                    dragging = false;
+                    drawer.style.transition = ''; backdrop.style.transition = '';
+                    return;
+                }
+                moved = true;
+
+                // translation max entre 0 et -largeur
+                const w = drawer.offsetWidth || 300;
+                const tx = Math.min(0, Math.max(-w, dx));   // 0 (ouvert) -> -w (complètement fermé)
+                lastTx = tx;
+
+                // applique la translation et atténue le backdrop
+                drawer.style.transform = `translateX(${tx}px)`;
+                const pct = 1 - Math.min(1, Math.abs(tx) / w); // 1 (ouvert) -> 0 (fermé)
+                backdrop.style.opacity = String(0.45 * pct); // même échelle que le CSS
+            };
+
+            const end = () => {
+                if (!dragging) return;
+                dragging = false;
+                drawer.style.transition = ''; backdrop.style.transition = '';
+
+                const w = drawer.offsetWidth || 300;
+                const elapsed = Date.now() - t0;
+
+                // critères de fermeture : au moins 30% du panneau, ou geste rapide (>60px en <200ms)
+                const shouldClose = (Math.abs(lastTx) > w * 0.3) || (elapsed < 200 && Math.abs(lastTx) > 60);
+
+                if (shouldClose) {
+                    close();
+                } else {
+                    // on ré-ouvre visuellement
+                    drawer.style.transform = '';
+                    backdrop.style.opacity = '';
+                }
+            };
+
+            // pointer events (modernes)
+            drawer.addEventListener('pointerdown', e => {
+                if (e.pointerType === 'touch' || e.pointerType === 'pen') start(e.clientX, e.clientY);
+            }, { passive: true });
+            window.addEventListener('pointermove', e => move(e.clientX, e.clientY), { passive: true });
+            window.addEventListener('pointerup', end, { passive: true });
+            window.addEventListener('pointercancel', end, { passive: true });
+
+            // fallback touch (anciens iOS)
+            drawer.addEventListener('touchstart', e => start(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+            window.addEventListener('touchmove', e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+            window.addEventListener('touchend', end, { passive: true });
+            window.addEventListener('touchcancel', end, { passive: true });
+        })();
+    </script>
 
     <!-- Styles inlined pour Grandes Dates (reprend tes classes existantes) -->
     <style>
