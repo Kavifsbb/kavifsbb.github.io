@@ -1357,7 +1357,7 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Petite zone "hint" en bas (facultatif visuel) */
   .navbar .nav-links::after {
-    content: "Swipe → ou appuie sur le X pour fermer";
+    content: "Appuie sur le X pour fermer";
     display: block;
     margin-top: auto;
     padding: .9rem .75rem .75rem;
