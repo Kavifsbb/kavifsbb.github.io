@@ -1304,7 +1304,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0;
     padding: 1rem 0.75rem;
     background:
-      linear-gradient(180deg, rgba(18,18,20,0.96) 0%, rgba(10,10,11,0.96) 100%);
+      linear-gradient(180deg, rgba(18,18,20,0.98) 0%, rgba(10,10,11,0.98) 100%);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-left: 1px solid rgba(255,255,255,0.08);
@@ -1331,7 +1331,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     letter-spacing: .2px;
     color: var(--white);
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.08);
     transition: background .2s ease, transform .2s ease, border-color .2s ease;
   }
