@@ -157,3 +157,47 @@
   .service-tile:hover{ transform:none; box-shadow:none; }
   .service-tile:hover .service-bg{ transform:none; filter:none; }
 }
+
+/* ===== Responsive Logos ===== */
+
+/* Grille de base (desktop) */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Cartes logo */
+.partner-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 80px;
+}
+.partner-card img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity .3s ease;
+}
+.partner-card img:hover { opacity: 1; }
+
+/* Mobile ≤599px : limiter à 5 logos */
+@media (max-width: 599.98px) {
+  .partners-grid .partner-card:nth-child(n+6) {
+    display: none; /* cache tout à partir du 6e logo */
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 logos max */
+    gap: 1rem;
+  }
+
+  /* Ajuste la taille pour mobile */
+  .partner-card img {
+    max-height: 40px;
+  }
+}
