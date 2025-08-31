@@ -1,0 +1,132 @@
+/* Services 2025 */
+:root{
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-stroke: rgba(255,255,255,0.18);
+  --text-strong:#fff;
+  --text-soft: rgba(255,255,255,0.78);
+  --chip-bg: rgba(255,255,255,0.12);
+  --chip-stroke: rgba(255,255,255,0.22);
+  --blur: 14px;
+}
+
+.services-2025{
+  margin: 0; padding: 4rem 1rem;
+}
+.services-2025-head{
+  text-align:center; margin-bottom: 1.5rem;
+}
+.services-2025 .section-title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2rem,3.5vw,3rem);
+  color:#fff; letter-spacing:2px; text-transform:uppercase;
+}
+.section-kicker{
+  color: var(--text-soft);
+  margin-top:.5rem; font-size: .95rem;
+}
+
+.services-tiles{
+  display:grid; gap: clamp(12px,1.8vw,18px);
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 1.5rem;
+}
+
+/* Tuiles fluides avec ratio contrôlé */
+.service-tile{
+  grid-column: span 6;
+  position:relative; isolation:isolate; overflow:hidden;
+  border-radius: 20px;
+  min-height: clamp(220px, 36vw, 360px);
+  backdrop-filter: blur(var(--blur));
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+  transition: box-shadow .4s ease, transform .4s ease;
+  border: 1px solid var(--glass-stroke);
+}
+.service-tile:nth-child(1){ grid-column: span 7; }
+.service-tile:nth-child(2){ grid-column: span 5; }
+.service-tile:nth-child(3){ grid-column: span 5; }
+.service-tile:nth-child(4){ grid-column: span 7; }
+
+@media (max-width: 920px){
+  .service-tile{ grid-column: span 12; }
+}
+
+/* Fond image + overlay dégradé directionnel */
+.service-bg{
+  position:absolute; inset:0; z-index:-2;
+  background-image: var(--bg);
+  background-size: cover; background-position: center;
+  filter: saturate(1.05) contrast(1.05) brightness(.9);
+  transform: scale(1.02);
+  transition: transform .6s ease, filter .6s ease;
+}
+.service-overlay{
+  position:absolute; inset:0; z-index:-1;
+  background:
+    radial-gradient(90% 80% at 80% 20%, rgba(0,0,0,0.1), transparent 50%),
+    linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.65) 65%, rgba(0,0,0,.85) 100%),
+    conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,.06), rgba(255,255,255,0) 25%, rgba(255,255,255,.08) 50%, rgba(255,255,255,0) 75%, rgba(255,255,255,.06));
+  mix-blend-mode: normal;
+}
+
+/* Contenu */
+.service-link{ display:flex; flex-direction:column; justify-content:space-between; height:100%; padding: clamp(16px, 2.2vw, 28px); color: inherit; text-decoration:none; }
+.service-header{ color:#fff; max-width: 60ch; }
+.badge{
+  display:inline-flex; align-items:center; gap:.5ch;
+  padding:.35rem .6rem; border-radius:999px;
+  font-size:.75rem; letter-spacing:.2px;
+  color:#fff; background: var(--chip-bg); border:1px solid var(--chip-stroke);
+  backdrop-filter: blur(8px);
+}
+.badge::before{ content:"●"; font-size:.6rem; }
+
+.service-title{
+  margin:.6rem 0 .25rem 0;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  line-height:1.1; color: var(--text-strong);
+  text-shadow: 0 1px 12px rgba(0,0,0,.25);
+}
+.service-desc{
+  color: var(--text-soft);
+  font-size: .95rem; line-height:1.5;
+}
+
+.service-footer{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 1rem; margin-top: 1rem;
+}
+.service-tags{
+  list-style:none; display:flex; gap:.5rem; margin:0; padding:0; flex-wrap:wrap;
+}
+.service-tags li{
+  padding:.35rem .6rem; border-radius: 999px;
+  font-size:.78rem; color:#fff; background: var(--chip-bg); border:1px solid var(--chip-stroke);
+  backdrop-filter: blur(6px);
+}
+.cta{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-weight:600; color:#fff; white-space:nowrap;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+/* Interactions */
+.service-tile:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.service-tile:hover .service-bg{
+  transform: scale(1.06);
+  filter: saturate(1.12) contrast(1.08) brightness(.95);
+}
+.service-tile:hover .cta{
+  border-color: rgba(255,255,255,.6);
+  transform: translateX(2px);
+}
+
+/* Accessibilité & motion */
+@media (prefers-reduced-motion: reduce){
+  .service-tile, .service-bg, .cta{ transition:none !important; }
+}

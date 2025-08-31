@@ -37,6 +37,7 @@
 
     <!-- Styles & polices -->
     <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -181,43 +182,109 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section" style="margin: 1rem;">
+    <!-- Services Section – 2025 -->
+    <section id="services" class="section services-2025">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Mes services</h2>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up">
-                    <img src="/assets/images/presentation/Screenshot_20240610_215629_Video Player.jpg"
-                        alt="Shows de freestyle basket" />
-                    <h3>Shows</h3>
-                    <p>Performances uniques de freestyle basket pour vos événements (sportifs, culturels, entreprises).
-                    </p>
-                    <p><a href="shows.html" class="text-link">En savoir plus</a></p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="/assets/images/presentation/P1099244.jpg"
-                        alt="Académie Vagabond – formation freestyle basket" />
-                    <h3>Académie Vagabond</h3>
-                    <p>La 1ère école de freestyle basket en France (Asnières‑sur‑Seine) : pédagogie, scène, culture
-                        hip‑hop.</p>
-                    <p><a href="academie.html" class="text-link">Découvrir l'académie</a></p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="/assets/images/presentation/IMG_0631.jpg" alt="Workshop freestyle basket" />
-                    <h3>Workshop</h3>
-                    <p>Ateliers d'initiation et perfectionnement : technique, expression, coordination et mise en scène.
-                    </p>
-                    <p><a href="workshop.html" class="text-link">Voir les ateliers</a></p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="/assets/images/presentation/P1099647.jpg" alt="Tournage et partenariat créatif" />
-                    <h3>Tournage</h3>
-                    <p>Collaborations vidéo et partenariats créatifs sur mesure (marques, médias, artistes).</p>
-                    <p><a href="projets.html" class="text-link">Voir des projets</a></p>
-                </div>
+            <div class="services-2025-head" data-aos="fade-up">
+                <h2 class="section-title">Mes services</h2>
+                <p class="section-kicker">Performances, pédagogie et collaborations créatives autour du freestyle
+                    basket.</p>
+            </div>
+
+            <div class="services-tiles">
+                <!-- Tile 1 -->
+                <article class="service-tile" data-aos="zoom-in" data-tilt>
+                    <a href="shows.html" class="service-link" aria-label="En savoir plus sur les shows">
+                        <div class="service-bg"
+                            style="--bg:url('/assets/images/presentation/Screenshot_20240610_215629_Video Player.jpg');">
+                        </div>
+                        <div class="service-overlay"></div>
+                        <header class="service-header">
+                            <span class="badge">Événementiel</span>
+                            <h3 class="service-title">Shows</h3>
+                            <p class="service-desc">Performances signature pour événements sportifs, culturels &
+                                corporate.</p>
+                        </header>
+                        <footer class="service-footer">
+                            <ul class="service-tags" aria-label="Exemples">
+                                <li>Arena</li>
+                                <li>Mi-temps</li>
+                                <li>Aftermovie</li>
+                            </ul>
+                            <span class="cta">En savoir plus <i class="fa-solid fa-arrow-right"></i></span>
+                        </footer>
+                    </a>
+                </article>
+
+                <!-- Tile 2 -->
+                <article class="service-tile" data-aos="zoom-in" data-aos-delay="75" data-tilt>
+                    <a href="academie.html" class="service-link" aria-label="Découvrir l'académie">
+                        <div class="service-bg" style="--bg:url('/assets/images/presentation/P1099244.jpg');"></div>
+                        <div class="service-overlay"></div>
+                        <header class="service-header">
+                            <span class="badge">Formation</span>
+                            <h3 class="service-title">Académie Vagabond</h3>
+                            <p class="service-desc">La 1ère école de freestyle basket en France : technique, scène,
+                                culture.</p>
+                        </header>
+                        <footer class="service-footer">
+                            <ul class="service-tags">
+                                <li>Asnières</li>
+                                <li>Pédagogie</li>
+                                <li>Hip-hop</li>
+                            </ul>
+                            <span class="cta">Découvrir <i class="fa-solid fa-arrow-right"></i></span>
+                        </footer>
+                    </a>
+                </article>
+
+                <!-- Tile 3 -->
+                <article class="service-tile" data-aos="zoom-in" data-aos-delay="150" data-tilt>
+                    <a href="workshop.html" class="service-link" aria-label="Voir les ateliers">
+                        <div class="service-bg" style="--bg:url('/assets/images/presentation/IMG_0631.jpg');"></div>
+                        <div class="service-overlay"></div>
+                        <header class="service-header">
+                            <span class="badge">Ateliers</span>
+                            <h3 class="service-title">Workshop</h3>
+                            <p class="service-desc">Initiation & perfectionnement : coordination, expression, mise en
+                                scène.</p>
+                        </header>
+                        <footer class="service-footer">
+                            <ul class="service-tags">
+                                <li>Clubs</li>
+                                <li>Scolaires</li>
+                                <li>Entreprises</li>
+                            </ul>
+                            <span class="cta">Voir les ateliers <i class="fa-solid fa-arrow-right"></i></span>
+                        </footer>
+                    </a>
+                </article>
+
+                <!-- Tile 4 -->
+                <article class="service-tile" data-aos="zoom-in" data-aos-delay="225" data-tilt>
+                    <a href="projets.html" class="service-link" aria-label="Voir des projets de tournage">
+                        <div class="service-bg" style="--bg:url('/assets/images/presentation/P1099647.jpg');"></div>
+                        <div class="service-overlay"></div>
+                        <header class="service-header">
+                            <span class="badge">Création</span>
+                            <h3 class="service-title">Tournage</h3>
+                            <p class="service-desc">Collaborations vidéo & partenariats sur-mesure avec marques et
+                                médias.</p>
+                        </header>
+                        <footer class="service-footer">
+                            <ul class="service-tags">
+                                <li>Brand Content</li>
+                                <li>Clips</li>
+                                <li>UGC Pro</li>
+                            </ul>
+                            <span class="cta">Voir des projets <i class="fa-solid fa-arrow-right"></i></span>
+                        </footer>
+                    </a>
+                </article>
             </div>
         </div>
     </section>
+
 
     <!-- Team & Partners -->
     <section class="section team-partners" id="partners">
@@ -394,14 +461,15 @@
         </div>
     </section>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">KAVI</a>
                     <p>L'excellence du Freestyle Basket</p>
-                    <p>Site créé par <a href="https://ilanassouline.vercel.app" class="footer-ilan" target="_blank" rel="noopener" >Ilan
+                    <p>Site créé par <a href="https://ilanassouline.vercel.app" class="footer-ilan" target="_blank"
+                            rel="noopener">Ilan
                             Assouline</a></p>
                     <div class="footer-social">
                         <a href="https://instagram.com/kavi_fsbb" aria-label="Instagram"><i
@@ -410,7 +478,7 @@
                         <a href="https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin"></i></a>
                     </div>
-                     
+
                 </div>
                 <div class="footer-links">
                     <div>
@@ -421,7 +489,7 @@
                             <li><a href="projets.html">Projets</a></li>
                         </ul>
                     </div>
-                   
+
                     <div>
                         <h4>Contact</h4>
                         <ul>
@@ -461,6 +529,7 @@
         }
     </script>
     <script src="js/main.js"></script>
+
 
     <!-- Styles inlined pour Grandes Dates (reprend tes classes existantes) -->
     <style>

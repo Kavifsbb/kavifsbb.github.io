@@ -39,6 +39,7 @@
 
     <!-- Styles & libs -->
     <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     <script src="js/contact.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,197 +50,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <style>
-        .contact-page {
-            background: var(--background-color);
-            min-height: 100vh;
-            padding-top: 120px;
-            padding-bottom: var(--spacing-lg);
-        }
-
-        .contact-header {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .contact-header h1 {
-            font-size: 2.7rem;
-            letter-spacing: 1px;
-            font-family: var(--font-display);
-            margin-bottom: .7rem;
-            color: var(--primary-color);
-        }
-
-        .contact-header p {
-            color: var(--text-light);
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-
-        .quick-contacts {
-            background: var(--gray-900);
-            border-radius: 14px;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, .10);
-            padding: 1.2rem 1rem;
-            margin-bottom: 2rem;
-            gap: 1rem 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .quick-contact-item {
-            font-size: 1.08rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            background: rgba(255, 255, 255, .03);
-            border-radius: 6px;
-            padding: .6rem 1.1rem;
-            transition: .2s;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        .quick-contact-item:hover {
-            background: var(--primary-color);
-            color: var(--black);
-        }
-
-        .quick-contact-item i {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
-
-        .social-links {
-            gap: 1rem;
-            display: flex;
-        }
-
-        .social-link {
-            background: var(--background-color);
-            color: var(--primary-color);
-            border: 1.5px solid var(--primary-color);
-            border-radius: 50%;
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            transition: .2s;
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            color: var(--black);
-            transform: scale(1.08);
-        }
-
-        .contact-form {
-            background: var(--gray-900);
-            border-radius: 14px;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, .10);
-            padding: 2rem 1.2rem;
-            margin: 1.5rem 0;
-        }
-
-        .form-row {
-            gap: 1.2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .form-group {
-            margin-bottom: 1.1rem;
-        }
-
-        .form-input,
-        .form-textarea {
-            background: var(--background-color);
-            color: var(--text-color);
-            border: 1.5px solid var(--gray-400);
-            border-radius: 7px;
-            font-size: 1.05rem;
-            padding: 1rem 1.2rem;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
-            transition: .2s;
-            width: 100%;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 2px 8px rgba(255, 107, 0, .08);
-            outline: none;
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-note {
-            font-size: .9rem;
-            opacity: .85;
-            margin-top: .25rem;
-        }
-
-        .form-button {
-            margin-top: .5rem;
-            width: 100%;
-            padding: 1rem;
-            border-radius: 24px;
-            background: var(--primary-color);
-            color: var(--black);
-            font-size: 1.08rem;
-            font-weight: 700;
-            letter-spacing: .5px;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: .7rem;
-            transition: .2s;
-        }
-
-        .form-button:hover {
-            background: var(--white);
-            color: var(--primary-color);
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 4px 16px rgba(255, 107, 0, .13);
-        }
-
-        .honeypot {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-
-        @media (max-width: 900px) {
-            .contact-form {
-                padding: 1.2rem .5rem;
-            }
-
-            .quick-contacts {
-                padding: .7rem .3rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -267,80 +78,120 @@
     </script>
 
     <main class="contact-page">
-        <div class="container">
-            <div class="contact-header" data-aos="fade-up">
-                <h1>Contact & devis — Freestyle Basket (Paris / Île-de-France)</h1>
-                <p>Shows, animations, ateliers, académie : dites-moi ce dont vous avez besoin, je vous réponds
-                    rapidement.</p>
-            </div>
+        <section class="contact-hero" aria-label="Contact & Devis">
+            <div class="container">
+                <header class="contact-hero-head" data-aos="fade-up">
+                    <h1>Contact & devis — Freestyle Basket</h1>
+                    <p>Shows, animations, ateliers & académie — dites-moi votre besoin, je réponds vite.</p>
+                </header>
 
-            <div class="contact-container" data-aos="fade-up">
-                <!-- Coordonnées rapides -->
-                <div class="quick-contacts" role="list">
-                    <a href="mailto:kavi.fsbball@outlook.com" class="quick-contact-item" role="listitem"
-                        aria-label="Envoyer un e-mail">
-                        <i class="fas fa-envelope" aria-hidden="true"></i> kavi.fsbball@outlook.com
-                    </a>
-                    <div class="social-links" role="list">
-                        <a href="https://instagram.com/kavi_fsbb" target="_blank" rel="noopener" class="social-link"
-                            role="listitem" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@kavi_fsb" target="_blank" rel="noopener" class="social-link"
-                            role="listitem" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket" target="_blank"
-                            rel="noopener" class="social-link" role="listitem" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin"></i></a>
-                    </div>
+                <div class="contact-shell">
+                    <!-- Aside (coordonnées + réseaux) -->
+                    <aside class="contact-aside" data-aos="fade-right">
+                        <div class="aside-card">
+                            <h2 class="aside-title">Coordonnées</h2>
+                            <a href="mailto:kavi.fsbball@outlook.com" class="aside-pill" aria-label="Envoyer un e-mail">
+                                <i class="fa-solid fa-envelope"></i> kavi.fsbball@outlook.com
+                            </a>
+
+                            <div class="aside-divider" role="separator" aria-hidden="true"></div>
+
+                            <div class="aside-social" role="list">
+                                <a class="social-chip" role="listitem" href="https://instagram.com/kavi_fsbb"
+                                    target="_blank" rel="noopener" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="social-chip" role="listitem" href="https://youtube.com/@kavi_fsb"
+                                    target="_blank" rel="noopener" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a class="social-chip" role="listitem"
+                                    href="https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket" target="_blank"
+                                    rel="noopener" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+
+                            <ul class="aside-meta" aria-label="Infos rapides">
+                                <li><i class="fa-solid fa-location-dot"></i> Paris / Île-de-France</li>
+                                <li><i class="fa-solid fa-clock"></i> Réponse sous 24h ouvrées</li>
+                                <li><i class="fa-solid fa-star"></i> Shows, ateliers, académie</li>
+                            </ul>
+                        </div>
+
+                        <div class="aside-note" data-aos="fade-up" data-aos-delay="150">
+                            <span class="note-dot" aria-hidden="true"></span>
+                            <p>Astuce : pour un devis précis, indiquez la <strong>date</strong>, la
+                                <strong>ville</strong>, le
+                                <strong>format</strong> (show/atelier), et le <strong>public</strong> estimé.
+                            </p>
+                        </div>
+                    </aside>
+
+                    <!-- Form -->
+                    <section class="contact-card" data-aos="fade-left">
+                        <div class="contact-card-glow" aria-hidden="true"></div>
+                        <h2 class="form-title">Écrivez-moi</h2>
+
+                        <!-- NE PAS CHANGER classes/IDs : utilisés par contact.js -->
+                        <form class="contact-form" aria-label="Formulaire de contact">
+                            <!-- Honeypot anti-spam -->
+                            <div class="honeypot">
+                                <label>Ne pas remplir si vous êtes un humain <input type="text" name="website"
+                                        tabindex="-1" autocomplete="off" /></label>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label for="cf-name" class="sr-only">Nom</label>
+                                    <input id="cf-name" name="name" type="text" class="form-input" placeholder=" "
+                                        required />
+                                    <span class="floating-label">Nom</span>
+                                </div>
+                                <div class="form-field">
+                                    <label for="cf-email" class="sr-only">Email</label>
+                                    <input id="cf-email" name="email" type="email" class="form-input" placeholder=" "
+                                        required />
+                                    <span class="floating-label">Email</span>
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="cf-subject" class="sr-only">Sujet</label>
+                                <input id="cf-subject" name="subject" type="text" class="form-input" placeholder=" "
+                                    required />
+                                <span class="floating-label">Sujet (ex. Devis show le 12/10, Paris)</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="cf-message" class="sr-only">Message</label>
+                                <textarea id="cf-message" name="message" class="form-textarea" placeholder=" "
+                                    required></textarea>
+                                <span class="floating-label">Votre message</span>
+                            </div>
+
+                            <button type="submit" class="form-button">
+                                Envoyer le message <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+
+                            <!-- contact.js ajoute ici .form-note -->
+                        </form>
+                    </section>
                 </div>
-
-                <!-- Formulaire -->
-                <!-- NOTE: ajoute action="/ton-endpoint" et method="POST" si tu connectes un backend/Netlify/Formspree -->
-                <form class="contact-form" aria-label="Formulaire de contact">
-                    <!-- Champ anti-spam honeypot -->
-                    <div class="honeypot">
-                        <label>Ne pas remplir si vous êtes un humain <input type="text" name="website" tabindex="-1"
-                                autocomplete="off" /></label>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="cf-name" class="sr-only">Nom</label>
-                            <input id="cf-name" name="name" type="text" class="form-input" placeholder="Nom" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="cf-email" class="sr-only">Email</label>
-                            <input id="cf-email" name="email" type="email" class="form-input" placeholder="Email"
-                                required />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cf-subject" class="sr-only">Sujet</label>
-                        <input id="cf-subject" name="subject" type="text" class="form-input"
-                            placeholder="Sujet (ex. Devis show à Paris le 12/10)" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cf-message" class="sr-only">Message</label>
-                        <textarea id="cf-message" name="message" class="form-textarea" placeholder="Votre message"
-                            required></textarea>
-                    </div>
-
-                    <button type="submit" class="form-button">
-                        Envoyer le message <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </button>
-                </form>
             </div>
-        </div>
+        </section>
     </main>
 
-     <!-- Footer -->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">KAVI</a>
                     <p>L'excellence du Freestyle Basket</p>
-                    <p>Site créé par <a href="https://ilanassouline.vercel.app" class="footer-ilan" target="_blank" rel="noopener" >Ilan
+                    <p>Site créé par <a href="https://ilanassouline.vercel.app" class="footer-ilan" target="_blank"
+                            rel="noopener">Ilan
                             Assouline</a></p>
                     <div class="footer-social">
                         <a href="https://instagram.com/kavi_fsbb" aria-label="Instagram"><i
@@ -349,7 +200,7 @@
                         <a href="https://fr.linkedin.com/in/kavi-thiagarajah-freestylebasket" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin"></i></a>
                     </div>
-                     
+
                 </div>
                 <div class="footer-links">
                     <div>
@@ -360,7 +211,7 @@
                             <li><a href="projets.html">Projets</a></li>
                         </ul>
                     </div>
-                   
+
                     <div>
                         <h4>Contact</h4>
                         <ul>
