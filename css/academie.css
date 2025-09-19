@@ -202,8 +202,6 @@
     gap: clamp(16px, 2vw, 24px);
     padding: clamp(16px, 2.2vw, 24px);
     border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, .14);
-    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
     backdrop-filter: blur(10px);
     transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     will-change: transform;
